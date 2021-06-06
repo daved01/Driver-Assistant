@@ -9,8 +9,20 @@ import SwiftUI
 
 struct ContentView: View {
     var body: some View {
-        Text("Hello, world!")
-            .padding()
+        NavigationView {
+            List {
+                NavigationLink( destination: LiveView(detect: false)) {
+                Text("Start Live View")
+                }
+                NavigationLink( destination: PreviewView()) {
+                    Text("Preview View")
+                }
+                NavigationLink( destination: LibraryView()) {
+                    Text("Test with image")
+                }
+            }
+        }
+        .navigationTitle("Driver Assist")
     }
 }
 

@@ -13,6 +13,10 @@
 		63B86C03266C067800673B3A /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 63B86C02266C067800673B3A /* Preview Assets.xcassets */; };
 		63B86C0E266C067800673B3A /* DriverAssistTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63B86C0D266C067800673B3A /* DriverAssistTests.swift */; };
 		63B86C19266C067800673B3A /* DriverAssistUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63B86C18266C067800673B3A /* DriverAssistUITests.swift */; };
+		63B86C29266C0B5600673B3A /* LiveView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63B86C28266C0B5600673B3A /* LiveView.swift */; };
+		63D2A378266CB8550097AE86 /* LibraryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63D2A377266CB8550097AE86 /* LibraryView.swift */; };
+		63D2A37C266CC0E30097AE86 /* PreviewView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63D2A37B266CC0E30097AE86 /* PreviewView.swift */; };
+		63D2A380266CCF7A0097AE86 /* ImagePickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63D2A37F266CCF7A0097AE86 /* ImagePickerView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -45,6 +49,10 @@
 		63B86C14266C067800673B3A /* DriverAssistUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DriverAssistUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		63B86C18266C067800673B3A /* DriverAssistUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DriverAssistUITests.swift; sourceTree = "<group>"; };
 		63B86C1A266C067800673B3A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		63B86C28266C0B5600673B3A /* LiveView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LiveView.swift; sourceTree = "<group>"; };
+		63D2A377266CB8550097AE86 /* LibraryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LibraryView.swift; sourceTree = "<group>"; };
+		63D2A37B266CC0E30097AE86 /* PreviewView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreviewView.swift; sourceTree = "<group>"; };
+		63D2A37F266CCF7A0097AE86 /* ImagePickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePickerView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -72,6 +80,13 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		630F3271266D568B004DE266 /* Live */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Live;
+			sourceTree = "<group>";
+		};
 		63B86BEF266C067800673B3A = {
 			isa = PBXGroup;
 			children = (
@@ -95,7 +110,10 @@
 		63B86BFA266C067800673B3A /* DriverAssist */ = {
 			isa = PBXGroup;
 			children = (
+				630F3271266D568B004DE266 /* Live */,
+				63B86C27266C078B00673B3A /* Model */,
 				63B86BFB266C067800673B3A /* DriverAssistApp.swift */,
+				63B86C26266C077600673B3A /* Views */,
 				63B86BFD266C067800673B3A /* ContentView.swift */,
 				63B86BFF266C067800673B3A /* Assets.xcassets */,
 				63B86C04266C067800673B3A /* Info.plist */,
@@ -128,6 +146,24 @@
 				63B86C1A266C067800673B3A /* Info.plist */,
 			);
 			path = DriverAssistUITests;
+			sourceTree = "<group>";
+		};
+		63B86C26266C077600673B3A /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				63B86C28266C0B5600673B3A /* LiveView.swift */,
+				63D2A377266CB8550097AE86 /* LibraryView.swift */,
+				63D2A37B266CC0E30097AE86 /* PreviewView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		63B86C27266C078B00673B3A /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				63D2A37F266CCF7A0097AE86 /* ImagePickerView.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -259,8 +295,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				63D2A378266CB8550097AE86 /* LibraryView.swift in Sources */,
+				63B86C29266C0B5600673B3A /* LiveView.swift in Sources */,
 				63B86BFE266C067800673B3A /* ContentView.swift in Sources */,
 				63B86BFC266C067800673B3A /* DriverAssistApp.swift in Sources */,
+				63D2A380266CCF7A0097AE86 /* ImagePickerView.swift in Sources */,
+				63D2A37C266CC0E30097AE86 /* PreviewView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
