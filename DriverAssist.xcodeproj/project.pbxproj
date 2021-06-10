@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		632E72352672078500C6E81E /* Settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 632E72342672078500C6E81E /* Settings.swift */; };
 		63B86BFC266C067800673B3A /* DriverAssistApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63B86BFB266C067800673B3A /* DriverAssistApp.swift */; };
 		63B86BFE266C067800673B3A /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63B86BFD266C067800673B3A /* ContentView.swift */; };
 		63B86C00266C067800673B3A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 63B86BFF266C067800673B3A /* Assets.xcassets */; };
@@ -37,6 +38,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		632E72342672078500C6E81E /* Settings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Settings.swift; sourceTree = "<group>"; };
 		63B86BF8266C067800673B3A /* DriverAssist.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DriverAssist.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		63B86BFB266C067800673B3A /* DriverAssistApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DriverAssistApp.swift; sourceTree = "<group>"; };
 		63B86BFD266C067800673B3A /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -152,6 +154,7 @@
 			isa = PBXGroup;
 			children = (
 				63B86C28266C0B5600673B3A /* LiveView.swift */,
+				632E72342672078500C6E81E /* Settings.swift */,
 				63D2A377266CB8550097AE86 /* LibraryView.swift */,
 				63D2A37B266CC0E30097AE86 /* PreviewView.swift */,
 			);
@@ -299,6 +302,7 @@
 				63B86C29266C0B5600673B3A /* LiveView.swift in Sources */,
 				63B86BFE266C067800673B3A /* ContentView.swift in Sources */,
 				63B86BFC266C067800673B3A /* DriverAssistApp.swift in Sources */,
+				632E72352672078500C6E81E /* Settings.swift in Sources */,
 				63D2A380266CCF7A0097AE86 /* ImagePickerView.swift in Sources */,
 				63D2A37C266CC0E30097AE86 /* PreviewView.swift in Sources */,
 			);

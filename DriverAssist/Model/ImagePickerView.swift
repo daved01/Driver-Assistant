@@ -13,7 +13,6 @@ struct ImagePickerView: UIViewControllerRepresentable {
     @Environment(\.presentationMode) var isPresented
     var sourceType: UIImagePickerController.SourceType
         
-    
     func makeUIViewController(context: Context) -> UIImagePickerController {
         let imagePicker = UIImagePickerController()
         imagePicker.sourceType = self.sourceType

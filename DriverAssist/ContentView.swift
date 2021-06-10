@@ -10,19 +10,24 @@ import SwiftUI
 struct ContentView: View {
     var body: some View {
         NavigationView {
-            List {
-                NavigationLink( destination: LiveView(detect: false)) {
-                Text("Start Live View")
+            VStack {
+                List {
+                    Text("Example 1")
+                    Text("Example 2")
+                    Text("Example 3")
                 }
-                NavigationLink( destination: PreviewView()) {
-                    Text("Preview View")
-                }
-                NavigationLink( destination: LibraryView()) {
-                    Text("Test with image")
+            HStack {
+                Spacer()
+                NavigationLink(destination: LibraryView()) {Image("baseline_photo_camera_black_36pt")}
+                Spacer()
+                NavigationLink(destination: LiveView()) {Image("baseline_videocam_black_36pt")}
+                Spacer()
+                NavigationLink(destination: Settings()) {Image("baseline_settings_black_36pt")}
+                Spacer()
                 }
             }
+            .navigationTitle("Library")
         }
-        .navigationTitle("Driver Assist")
     }
 }
 
