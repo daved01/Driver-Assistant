@@ -11,7 +11,8 @@ import SwiftUI
 struct DriverAssistApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            //ContentView()
+            LiveView()
         }
     }
 }

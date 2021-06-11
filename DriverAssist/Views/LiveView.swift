@@ -8,13 +8,13 @@
 import SwiftUI
 
 struct LiveView: View {
-    var detect = false
+    
     
     var body: some View {
-        VStack {
-        Text("Live View")
-        .padding(EdgeInsets(top:10, leading:20, bottom:10, trailing: 20))
-        }
+       CameraViewController()
+        .edgesIgnoringSafeArea(.top)
+        LiveViewButtons()
+        
     }
 }
 
