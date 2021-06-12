@@ -17,7 +17,6 @@
 		63B86C0E266C067800673B3A /* DriverAssistTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63B86C0D266C067800673B3A /* DriverAssistTests.swift */; };
 		63B86C19266C067800673B3A /* DriverAssistUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63B86C18266C067800673B3A /* DriverAssistUITests.swift */; };
 		63D2A378266CB8550097AE86 /* LibraryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63D2A377266CB8550097AE86 /* LibraryView.swift */; };
-		63D2A37C266CC0E30097AE86 /* PreviewView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63D2A37B266CC0E30097AE86 /* PreviewView.swift */; };
 		63D2A380266CCF7A0097AE86 /* ImagePickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63D2A37F266CCF7A0097AE86 /* ImagePickerView.swift */; };
 		63E24807267346260098F26A /* CameraViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63E24806267346260098F26A /* CameraViewController.swift */; };
 		63E24809267346A30098F26A /* CameraController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63E24808267346A30098F26A /* CameraController.swift */; };
@@ -59,7 +58,6 @@
 		63B86C18266C067800673B3A /* DriverAssistUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DriverAssistUITests.swift; sourceTree = "<group>"; };
 		63B86C1A266C067800673B3A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		63D2A377266CB8550097AE86 /* LibraryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LibraryView.swift; sourceTree = "<group>"; };
-		63D2A37B266CC0E30097AE86 /* PreviewView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreviewView.swift; sourceTree = "<group>"; };
 		63D2A37F266CCF7A0097AE86 /* ImagePickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePickerView.swift; sourceTree = "<group>"; };
 		63E24806267346260098F26A /* CameraViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraViewController.swift; sourceTree = "<group>"; };
 		63E24808267346A30098F26A /* CameraController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraController.swift; sourceTree = "<group>"; };
@@ -176,7 +174,6 @@
 				632E72342672078500C6E81E /* Settings.swift */,
 				63D2A377266CB8550097AE86 /* LibraryView.swift */,
 				63E2480D267365FC0098F26A /* PhotoView.swift */,
-				63D2A37B266CC0E30097AE86 /* PreviewView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -184,7 +181,6 @@
 		63B86C27266C078B00673B3A /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				63D2A37F266CCF7A0097AE86 /* ImagePickerView.swift */,
 				632DF5DF26729EE20016D849 /* Detector.swift */,
 				632DF5E52672A0830016D849 /* InferenceModule.h */,
 			);
@@ -194,6 +190,7 @@
 		63E24805267346020098F26A /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				63D2A37F266CCF7A0097AE86 /* ImagePickerView.swift */,
 				63E24806267346260098F26A /* CameraViewController.swift */,
 				63E24808267346A30098F26A /* CameraController.swift */,
 			);
@@ -346,7 +343,6 @@
 				63B86BFC266C067800673B3A /* DriverAssistApp.swift in Sources */,
 				632E72352672078500C6E81E /* Settings.swift in Sources */,
 				63D2A380266CCF7A0097AE86 /* ImagePickerView.swift in Sources */,
-				63D2A37C266CC0E30097AE86 /* PreviewView.swift in Sources */,
 				63E24807267346260098F26A /* CameraViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

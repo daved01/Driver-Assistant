@@ -12,7 +12,6 @@ struct DriverAssistApp: App {
     var body: some Scene {
         WindowGroup {
             ContentView()
-            //LiveView()
         }
     }
 }

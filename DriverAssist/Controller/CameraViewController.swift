@@ -9,6 +9,7 @@ import UIKit
 import SwiftUI
 
 
+// UIViewController - Used to bring views to live
 final class CameraViewController: UIViewController {
     let cameraController = CameraController()
     var previewView: UIView!
@@ -26,12 +27,12 @@ final class CameraViewController: UIViewController {
             
             try? self.cameraController.displayPreview(on: self.previewView)
         }
-        
     }
 }
 
 
-extension CameraViewController : UIViewControllerRepresentable{
+// UIViewControllerRepresentable
+extension CameraViewController : UIViewControllerRepresentable {
     public typealias UIViewControllerType = CameraViewController
     
     public func makeUIViewController(context: UIViewControllerRepresentableContext<CameraViewController>) -> CameraViewController {
@@ -41,3 +42,6 @@ extension CameraViewController : UIViewControllerRepresentable{
     public func updateUIViewController(_ uiViewController: CameraViewController, context: UIViewControllerRepresentableContext<CameraViewController>) {
     }
 }
+
+
+

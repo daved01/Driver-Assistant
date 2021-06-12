@@ -8,33 +8,30 @@
 import SwiftUI
 
 struct PhotoView: View {
-    @State private var sourceType: UIImagePickerController.SourceType = .photoLibrary
-    @State private var selectedImage: UIImage?
-    @State private var isImagePickerDisplay = false
+    @State private var image: Image?
+    @State private var inputImage: UIImage?
+    @State private var showImagePicker = false
     
     var body: some View {
         VStack {
-            Spacer()
-            Image("testimage")
-                .resizable()
-                .scaledToFit()
-                .ignoresSafeArea()
-            Spacer()
+            image?
+            .resizable()
+            .scaledToFit()
+            
             Button("Select image") {
-            self.sourceType = .photoLibrary
-            self.isImagePickerDisplay.toggle()
-            }
-            
-            
-            .padding()
-            .foregroundColor(.white)
-            .background(/*@START_MENU_TOKEN@*//*@PLACEHOLDER=View@*/Color.blue/*@END_MENU_TOKEN@*/)
-            .cornerRadius(30.0)
-            .sheet(isPresented: self.$isImagePickerDisplay) {
-                    ImagePickerView(selectedImage: self.$selectedImage, sourceType: self.sourceType)
+                self.showImagePicker = true
             }
         }
+        .sheet(isPresented: $showImagePicker, onDismiss: loadImage) {
+            ImagePicker(image: self.$inputImage)
+        }
     }
+       
+    func loadImage() {
+        guard let inputImage = inputImage else { return }
+        image = Image(uiImage: inputImage)
+    }
+    
 }
 
 struct PhotoView_Previews: PreviewProvider {

@@ -27,35 +27,37 @@ struct ContentView: View {
                         .font(.caption)
                         .foregroundColor(elementColour)
                         }
-                }
-                Spacer()
-                NavigationLink(destination: PhotoView()) {
-                VStack {
-                    Image("baseline_photo_camera_black_24pt")
-                    .foregroundColor(elementColour)
-                    Text("Image mode")
-                    .font(.caption)
-                    .foregroundColor(elementColour)
                     }
-                }
-                Spacer()
-                NavigationLink(destination: Settings()) {
-                VStack {
-                    Image("baseline_settings_black_24pt")
-                    .foregroundColor(elementColour)
-                    Text("Settings")
-                    .font(.caption)
-                    .foregroundColor(elementColour)
+                    Spacer()
+                    NavigationLink(destination: PhotoView()) {
+                    VStack {
+                        Image("baseline_photo_camera_black_24pt")
+                        .foregroundColor(elementColour)
+                        Text("Image mode")
+                        .font(.caption)
+                        .foregroundColor(elementColour)
+                        }
                     }
-                }
-                Spacer()
-                }
+                    Spacer()
+                    NavigationLink(destination: Settings()) {
+                    VStack {
+                        Image("baseline_settings_black_24pt")
+                        .foregroundColor(elementColour)
+                        Text("Settings")
+                        .font(.caption)
+                        .foregroundColor(elementColour)
+                        }
+                    }
+                    Spacer()
+                    }
                 }
             }
             .gesture(TapGesture()
             .onEnded{ isHidden.toggle()})
         }
+        
     }
+    
     
 }
 

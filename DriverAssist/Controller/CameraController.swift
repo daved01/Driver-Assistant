@@ -8,7 +8,7 @@
 import UIKit
 import AVFoundation
 
-class CameraController: NSObject{
+class CameraController: NSObject {
     var captureSession: AVCaptureSession?
     var backCamera: AVCaptureDevice?
     var backCameraInput: AVCaptureDeviceInput?
@@ -23,7 +23,7 @@ class CameraController: NSObject{
         case unknown
     }
     
-    func prepare(completionHandler: @escaping (Error?) -> Void){
+    func prepare(completionHandler: @escaping (Error?) -> Void) {
         func createCaptureSession(){
             self.captureSession = AVCaptureSession()
         }
@@ -39,8 +39,8 @@ class CameraController: NSObject{
         func configureDeviceInputs() throws {
             guard let captureSession = self.captureSession else { throw CameraControllerError.captureSessionIsMissing }
             
-            if let frontCamera = self.backCamera {
-                self.backCameraInput = try AVCaptureDeviceInput(device: frontCamera)
+            if let backCamera = self.backCamera {
+                self.backCameraInput = try AVCaptureDeviceInput(device: backCamera)
                 
                 if captureSession.canAddInput(self.backCameraInput!) { captureSession.addInput(self.backCameraInput!)}
                 else { throw CameraControllerError.inputsAreInvalid }
@@ -49,7 +49,6 @@ class CameraController: NSObject{
             else { throw CameraControllerError.noCamerasAvailable }
             
             captureSession.startRunning()
-            
         }
         
         DispatchQueue(label: "prepare").async {
@@ -72,15 +71,21 @@ class CameraController: NSObject{
             }
         }
     }
+    
+    
     func displayPreview(on view: UIView) throws {
         guard let captureSession = self.captureSession, captureSession.isRunning else { throw CameraControllerError.captureSessionIsMissing }
         
         self.previewLayer = AVCaptureVideoPreviewLayer(session: captureSession)
         self.previewLayer?.videoGravity = AVLayerVideoGravity.resizeAspectFill
+        
+        
         self.previewLayer?.connection?.videoOrientation = .portrait
+        
         
         view.layer.insertSublayer(self.previewLayer!, at: 0)
         self.previewLayer?.frame = view.frame
     }
+    
     
 }
