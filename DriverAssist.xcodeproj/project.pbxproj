@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		632DF5E026729EE20016D849 /* Detector.swift in Sources */ = {isa = PBXBuildFile; fileRef = 632DF5DF26729EE20016D849 /* Detector.swift */; };
+		632DF5E326729F4E0016D849 /* classes.txt in Resources */ = {isa = PBXBuildFile; fileRef = 632DF5E226729F4E0016D849 /* classes.txt */; };
 		632E72352672078500C6E81E /* Settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 632E72342672078500C6E81E /* Settings.swift */; };
 		63B86BFC266C067800673B3A /* DriverAssistApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63B86BFB266C067800673B3A /* DriverAssistApp.swift */; };
 		63B86BFE266C067800673B3A /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63B86BFD266C067800673B3A /* ContentView.swift */; };
@@ -14,10 +16,11 @@
 		63B86C03266C067800673B3A /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 63B86C02266C067800673B3A /* Preview Assets.xcassets */; };
 		63B86C0E266C067800673B3A /* DriverAssistTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63B86C0D266C067800673B3A /* DriverAssistTests.swift */; };
 		63B86C19266C067800673B3A /* DriverAssistUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63B86C18266C067800673B3A /* DriverAssistUITests.swift */; };
-		63B86C29266C0B5600673B3A /* LiveView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63B86C28266C0B5600673B3A /* LiveView.swift */; };
 		63D2A378266CB8550097AE86 /* LibraryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63D2A377266CB8550097AE86 /* LibraryView.swift */; };
-		63D2A37C266CC0E30097AE86 /* PreviewView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63D2A37B266CC0E30097AE86 /* PreviewView.swift */; };
 		63D2A380266CCF7A0097AE86 /* ImagePickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63D2A37F266CCF7A0097AE86 /* ImagePickerView.swift */; };
+		63E24807267346260098F26A /* CameraViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63E24806267346260098F26A /* CameraViewController.swift */; };
+		63E24809267346A30098F26A /* CameraController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63E24808267346A30098F26A /* CameraController.swift */; };
+		63E2480E267365FC0098F26A /* PhotoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63E2480D267365FC0098F26A /* PhotoView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -38,6 +41,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		632DF5DF26729EE20016D849 /* Detector.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Detector.swift; sourceTree = "<group>"; };
+		632DF5E226729F4E0016D849 /* classes.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = classes.txt; sourceTree = "<group>"; };
+		632DF5E52672A0830016D849 /* InferenceModule.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = InferenceModule.h; sourceTree = "<group>"; };
 		632E72342672078500C6E81E /* Settings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Settings.swift; sourceTree = "<group>"; };
 		63B86BF8266C067800673B3A /* DriverAssist.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DriverAssist.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		63B86BFB266C067800673B3A /* DriverAssistApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DriverAssistApp.swift; sourceTree = "<group>"; };
@@ -51,10 +57,11 @@
 		63B86C14266C067800673B3A /* DriverAssistUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DriverAssistUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		63B86C18266C067800673B3A /* DriverAssistUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DriverAssistUITests.swift; sourceTree = "<group>"; };
 		63B86C1A266C067800673B3A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		63B86C28266C0B5600673B3A /* LiveView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LiveView.swift; sourceTree = "<group>"; };
 		63D2A377266CB8550097AE86 /* LibraryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LibraryView.swift; sourceTree = "<group>"; };
-		63D2A37B266CC0E30097AE86 /* PreviewView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreviewView.swift; sourceTree = "<group>"; };
 		63D2A37F266CCF7A0097AE86 /* ImagePickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePickerView.swift; sourceTree = "<group>"; };
+		63E24806267346260098F26A /* CameraViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraViewController.swift; sourceTree = "<group>"; };
+		63E24808267346A30098F26A /* CameraController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraController.swift; sourceTree = "<group>"; };
+		63E2480D267365FC0098F26A /* PhotoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -89,6 +96,14 @@
 			path = Live;
 			sourceTree = "<group>";
 		};
+		632DF5E126729F220016D849 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				632DF5E226729F4E0016D849 /* classes.txt */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
 		63B86BEF266C067800673B3A = {
 			isa = PBXGroup;
 			children = (
@@ -112,6 +127,8 @@
 		63B86BFA266C067800673B3A /* DriverAssist */ = {
 			isa = PBXGroup;
 			children = (
+				63E24805267346020098F26A /* Controller */,
+				632DF5E126729F220016D849 /* Resources */,
 				630F3271266D568B004DE266 /* Live */,
 				63B86C27266C078B00673B3A /* Model */,
 				63B86BFB266C067800673B3A /* DriverAssistApp.swift */,
@@ -153,10 +170,10 @@
 		63B86C26266C077600673B3A /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				63B86C28266C0B5600673B3A /* LiveView.swift */,
+				63E2480A267355050098F26A /* Helpers */,
 				632E72342672078500C6E81E /* Settings.swift */,
 				63D2A377266CB8550097AE86 /* LibraryView.swift */,
-				63D2A37B266CC0E30097AE86 /* PreviewView.swift */,
+				63E2480D267365FC0098F26A /* PhotoView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -164,9 +181,27 @@
 		63B86C27266C078B00673B3A /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				63D2A37F266CCF7A0097AE86 /* ImagePickerView.swift */,
+				632DF5DF26729EE20016D849 /* Detector.swift */,
+				632DF5E52672A0830016D849 /* InferenceModule.h */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		63E24805267346020098F26A /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				63D2A37F266CCF7A0097AE86 /* ImagePickerView.swift */,
+				63E24806267346260098F26A /* CameraViewController.swift */,
+				63E24808267346A30098F26A /* CameraController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		63E2480A267355050098F26A /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Helpers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -236,6 +271,7 @@
 				TargetAttributes = {
 					63B86BF7266C067800673B3A = {
 						CreatedOnToolsVersion = 12.5;
+						LastSwiftMigration = 1250;
 					};
 					63B86C08266C067800673B3A = {
 						CreatedOnToolsVersion = 12.5;
@@ -272,6 +308,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				632DF5E326729F4E0016D849 /* classes.txt in Resources */,
 				63B86C03266C067800673B3A /* Preview Assets.xcassets in Resources */,
 				63B86C00266C067800673B3A /* Assets.xcassets in Resources */,
 			);
@@ -299,12 +336,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				63D2A378266CB8550097AE86 /* LibraryView.swift in Sources */,
-				63B86C29266C0B5600673B3A /* LiveView.swift in Sources */,
 				63B86BFE266C067800673B3A /* ContentView.swift in Sources */,
+				632DF5E026729EE20016D849 /* Detector.swift in Sources */,
+				63E2480E267365FC0098F26A /* PhotoView.swift in Sources */,
+				63E24809267346A30098F26A /* CameraController.swift in Sources */,
 				63B86BFC266C067800673B3A /* DriverAssistApp.swift in Sources */,
 				632E72352672078500C6E81E /* Settings.swift in Sources */,
 				63D2A380266CCF7A0097AE86 /* ImagePickerView.swift in Sources */,
-				63D2A37C266CC0E30097AE86 /* PreviewView.swift in Sources */,
+				63E24807267346260098F26A /* CameraViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -461,6 +500,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"DriverAssist/Preview Content\"";
 				DEVELOPMENT_TEAM = 8N9383UWC5;
@@ -473,6 +513,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = dk.DriverAssist;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -483,6 +524,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"DriverAssist/Preview Content\"";
 				DEVELOPMENT_TEAM = 8N9383UWC5;
