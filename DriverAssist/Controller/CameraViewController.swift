@@ -29,6 +29,8 @@ final class CameraViewController: UIViewController {
             try? self.cameraController.displayPreview(on: self.previewView)
         }
     }
+    
+    
 
 }
 
