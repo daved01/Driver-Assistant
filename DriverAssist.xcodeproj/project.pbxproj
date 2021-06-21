@@ -10,6 +10,7 @@
 		632DF5E026729EE20016D849 /* Detector.swift in Sources */ = {isa = PBXBuildFile; fileRef = 632DF5DF26729EE20016D849 /* Detector.swift */; };
 		632DF5E326729F4E0016D849 /* classes.txt in Resources */ = {isa = PBXBuildFile; fileRef = 632DF5E226729F4E0016D849 /* classes.txt */; };
 		632E72352672078500C6E81E /* Settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 632E72342672078500C6E81E /* Settings.swift */; };
+		6386649C2681235000B63AFD /* Display.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6386649B2681235000B63AFD /* Display.swift */; };
 		63B86BFC266C067800673B3A /* DriverAssistApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63B86BFB266C067800673B3A /* DriverAssistApp.swift */; };
 		63B86BFE266C067800673B3A /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63B86BFD266C067800673B3A /* ContentView.swift */; };
 		63B86C00266C067800673B3A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 63B86BFF266C067800673B3A /* Assets.xcassets */; };
@@ -45,6 +46,7 @@
 		632DF5E226729F4E0016D849 /* classes.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = classes.txt; sourceTree = "<group>"; };
 		632DF5E52672A0830016D849 /* InferenceModule.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = InferenceModule.h; sourceTree = "<group>"; };
 		632E72342672078500C6E81E /* Settings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Settings.swift; sourceTree = "<group>"; };
+		6386649B2681235000B63AFD /* Display.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Display.swift; sourceTree = "<group>"; };
 		63B86BF8266C067800673B3A /* DriverAssist.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DriverAssist.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		63B86BFB266C067800673B3A /* DriverAssistApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DriverAssistApp.swift; sourceTree = "<group>"; };
 		63B86BFD266C067800673B3A /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -137,6 +139,7 @@
 				63B86BFF266C067800673B3A /* Assets.xcassets */,
 				63B86C04266C067800673B3A /* Info.plist */,
 				63B86C01266C067800673B3A /* Preview Content */,
+				6386649B2681235000B63AFD /* Display.swift */,
 			);
 			path = DriverAssist;
 			sourceTree = "<group>";
@@ -335,6 +338,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6386649C2681235000B63AFD /* Display.swift in Sources */,
 				63D2A378266CB8550097AE86 /* LibraryView.swift in Sources */,
 				63B86BFE266C067800673B3A /* ContentView.swift in Sources */,
 				632DF5E026729EE20016D849 /* Detector.swift in Sources */,

@@ -17,6 +17,10 @@ struct ContentView: View {
             CameraViewController()
                 .edgesIgnoringSafeArea(.all)
                 .navigationBarHidden(true)
+                
+                // Move stuff into separate view
+                .overlay(Display()                )
+            
             if !isHidden {
             HStack {
                 Spacer()
@@ -64,6 +68,9 @@ struct ContentView: View {
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
-        ContentView()
+        Group {
+            ContentView()
+            ContentView()
+        }
     }
 }
