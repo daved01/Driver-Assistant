@@ -15,7 +15,8 @@ struct ContentView: View {
         NavigationView {
         VStack {
             CameraViewController()
-            .edgesIgnoringSafeArea(.top)
+                .edgesIgnoringSafeArea(.all)
+                .navigationBarHidden(true)
             if !isHidden {
             HStack {
                 Spacer()

@@ -23,8 +23,8 @@ class CameraController: NSObject {
         case unknown
     }
     
+       
 
-    
     func prepare(completionHandler: @escaping (Error?) -> Void) {
         func createCaptureSession(){
             self.captureSession = AVCaptureSession()
@@ -80,7 +80,8 @@ class CameraController: NSObject {
         
         self.previewLayer = AVCaptureVideoPreviewLayer(session: captureSession)
         self.previewLayer?.videoGravity = AVLayerVideoGravity.resizeAspectFill
-        self.previewLayer?.connection?.videoOrientation = .portrait
+        self.previewLayer?.connection?.videoOrientation = .landscapeRight
+        //self.previewLayer?.videoGravity = AVLayerVideoGravity.resizeAspectFill
        
         view.layer.insertSublayer(self.previewLayer!, at: 0)
         self.previewLayer?.frame = view.frame
