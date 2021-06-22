@@ -7,6 +7,7 @@
 
 import SwiftUI
 
+
 struct ContentView: View {
     let elementColour = Color(.red)
     @State private var isHidden: Bool = true
@@ -20,6 +21,7 @@ struct ContentView: View {
                 
                 // Move stuff into separate view
                 .overlay(Display())
+            
             
             if !isHidden {
             HStack {
@@ -59,10 +61,11 @@ struct ContentView: View {
             }
             .gesture(TapGesture()
             .onEnded{ isHidden.toggle()})
+        
         }
         
-    }
     
+    }
     
 }
 

@@ -23,7 +23,6 @@ class CameraController: NSObject {
         case unknown
     }
     
-       
 
     func prepare(completionHandler: @escaping (Error?) -> Void) {
         func createCaptureSession(){
@@ -85,8 +84,5 @@ class CameraController: NSObject {
         view.layer.insertSublayer(self.previewLayer!, at: 0)
         self.previewLayer?.frame = view.frame
     }
-    
-    
-    
     
 }
