@@ -8,13 +8,16 @@
 import SwiftUI
 
 struct Display: View {
+    //@ObservedObject var speed: SpeedViewController
+    
     var body: some View {
         
             HStack {
                 Spacer()
                     VStack {
                         
-                Text("26")
+                        //Text("\(speed.currentSpeed)")
+                        Text("27")
                     .font(.system(size: 82.0))
                     .fontWeight(.regular)
                     .foregroundColor(.white)

@@ -19,7 +19,7 @@ struct ContentView: View {
                 .navigationBarHidden(true)
                 
                 // Move stuff into separate view
-                .overlay(Display()                )
+                .overlay(Display())
             
             if !isHidden {
             HStack {
@@ -69,7 +69,6 @@ struct ContentView: View {
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
         Group {
-            ContentView()
             ContentView()
         }
     }

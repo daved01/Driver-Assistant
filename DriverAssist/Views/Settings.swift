@@ -32,6 +32,12 @@ struct Settings: View {
                     .font(.body)
                 }
             }
+            HStack(alignment: .center) {
+                Toggle(isOn: $shareData) {
+                    Text("Units imperial/metric")
+                    .font(.body)
+                }
+            }
         }
         .navigationBarTitle("Settings")
     }
