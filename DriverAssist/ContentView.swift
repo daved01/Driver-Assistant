@@ -7,6 +7,7 @@
 
 import SwiftUI
 
+
 struct ContentView: View {
     let elementColour = Color(.red)
     @State private var isHidden: Bool = true
@@ -17,6 +18,11 @@ struct ContentView: View {
             CameraViewController()
                 .edgesIgnoringSafeArea(.all)
                 .navigationBarHidden(true)
+                
+                // Move stuff into separate view
+                .overlay(DisplayView())
+            
+            
             if !isHidden {
             HStack {
                 Spacer()
@@ -55,15 +61,18 @@ struct ContentView: View {
             }
             .gesture(TapGesture()
             .onEnded{ isHidden.toggle()})
+        
         }
         
-    }
     
+    }
     
 }
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
-        ContentView()
+        Group {
+            ContentView()
+        }
     }
 }
