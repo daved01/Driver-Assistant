@@ -7,26 +7,22 @@
 
 import SwiftUI
 
-struct Display: View {
-   
-    @State var speed = SpeedViewController()
+struct DisplayView: View {
+    @ObservedObject var locationViewModel = LocationViewModel()
     
     var body: some View {
             HStack {
                 Spacer()
                     VStack {
-                        
-                        //Text("\(speed.currentSpeed)")
-                        Text("27")
-                        
-                    .font(.system(size: 82.0))
-                    .fontWeight(.regular)
-                    .foregroundColor(.black)
-                Text("MPH")
-                    .foregroundColor(.white)
-                    .fontWeight(.light)
-                    .font(.system(size: 38.0))
-                Spacer()
+                        Text("\(Int(locationViewModel.currentSpeed))")
+                        .font(.system(size: 82.0))
+                        .fontWeight(.regular)
+                        .foregroundColor(.white)
+                    Text("MPH")
+                        .foregroundColor(.white)
+                        .fontWeight(.light)
+                        .font(.system(size: 38.0))
+                    Spacer()
                     }
             // Icon
                 Spacer()
@@ -43,6 +39,6 @@ struct Display: View {
 
 struct Display_Previews: PreviewProvider {
     static var previews: some View {
-        Display()
+        DisplayView()
     }
 }

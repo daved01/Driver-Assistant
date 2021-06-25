@@ -20,7 +20,7 @@ struct ContentView: View {
                 .navigationBarHidden(true)
                 
                 // Move stuff into separate view
-                .overlay(Display())
+                .overlay(DisplayView())
             
             
             if !isHidden {
