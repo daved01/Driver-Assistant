@@ -12,6 +12,8 @@ struct Settings: View {
     @State private var alwaysRecord = false
     @State private var shareData = false
     
+    @AppStorage("metricUnits") var metricUnits = false
+    
     var body: some View {
         List {
             HStack {
@@ -33,10 +35,11 @@ struct Settings: View {
                 }
             }
             HStack(alignment: .center) {
-                Toggle(isOn: $shareData) {
-                    Text("Units imperial/metric")
+                Toggle(isOn: $metricUnits) {
+                    Text("Use metric units")
                     .font(.body)
                 }
+                
             }
         }
         .navigationBarTitle("Settings")

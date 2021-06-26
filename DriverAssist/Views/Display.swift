@@ -18,7 +18,7 @@ struct DisplayView: View {
                         .font(.system(size: 82.0))
                         .fontWeight(.regular)
                         .foregroundColor(.white)
-                    Text("MPH")
+                        Text(locationViewModel.unitString)
                         .foregroundColor(.white)
                         .fontWeight(.light)
                         .font(.system(size: 38.0))
@@ -27,7 +27,7 @@ struct DisplayView: View {
             // Icon
                 Spacer()
                 VStack {
-                    Image("test-stop-sign")
+                    Image("stop-sign")
                         .frame(width: 32.0, height: 32.0)
                         .padding(40.0)
                         .accentColor(.red)
