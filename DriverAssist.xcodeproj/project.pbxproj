@@ -90,13 +90,6 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		630F3271266D568B004DE266 /* Live */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Live;
-			sourceTree = "<group>";
-		};
 		632DF5E126729F220016D849 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
@@ -130,7 +123,6 @@
 			children = (
 				63E24805267346020098F26A /* Controller */,
 				632DF5E126729F220016D849 /* Resources */,
-				630F3271266D568B004DE266 /* Live */,
 				63B86C27266C078B00673B3A /* Model */,
 				63B86BFB266C067800673B3A /* DriverAssistApp.swift */,
 				63B86C26266C077600673B3A /* Views */,
@@ -171,7 +163,6 @@
 		63B86C26266C077600673B3A /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				63E2480A267355050098F26A /* Helpers */,
 				632E72342672078500C6E81E /* Settings.swift */,
 				6386649B2681235000B63AFD /* Display.swift */,
 				63D2A377266CB8550097AE86 /* LibraryView.swift */,
@@ -196,13 +187,6 @@
 				63E24808267346A30098F26A /* CameraController.swift */,
 			);
 			path = Controller;
-			sourceTree = "<group>";
-		};
-		63E2480A267355050098F26A /* Helpers */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Helpers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
