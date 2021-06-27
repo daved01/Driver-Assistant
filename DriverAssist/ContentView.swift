@@ -21,6 +21,9 @@ struct ContentView: View {
                 
                 // Move stuff into separate view
                 .overlay(DisplayView())
+                
+            //TODO: Need to add detection stuff to the CameraViewController
+                //.overlay(DetectionView())
             
             
             if !isHidden {

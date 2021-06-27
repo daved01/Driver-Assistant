@@ -10,6 +10,7 @@ import SwiftUI
 
 
 // UIViewController - Used to bring views to live
+// TODO: Need to add detection stuff to this class!
 final class CameraViewController: UIViewController {
     let cameraController = CameraController()
     var previewView: UIView!
