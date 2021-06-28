@@ -13,7 +13,8 @@ import Vision
 
 
 // UIViewController - Used to bring views to live
-final class CameraViewController: UIViewController, AVCaptureVideoDataOutputSampleBufferDelegate {
+final class CameraViewController: UIViewController, AVCaptureVideoDataOutputSampleBufferDelegate, ObservableObject {
+    @Published var showStopSign = false
     
     private var previewView: UIView!
     private var firstLabel: String = ""
@@ -38,7 +39,7 @@ final class CameraViewController: UIViewController, AVCaptureVideoDataOutputSamp
         captureSession.startRunning()
                 
         // Display
-        previewLayer  = AVCaptureVideoPreviewLayer(session: captureSession)
+        previewLayer = AVCaptureVideoPreviewLayer(session: captureSession)
         
         // Adds full screen view
         previewLayer.videoGravity = AVLayerVideoGravity.resizeAspectFill
@@ -141,9 +142,11 @@ final class CameraViewController: UIViewController, AVCaptureVideoDataOutputSamp
             // Box colour depending on label
             if label == "Banana" {
                 boxLayer.borderColor = CGColor.init(red: 1.0, green: 1.0, blue: 0.0, alpha: 0.5)
+                self.showStopSign = true
             }
             else {
                 boxLayer.borderColor = CGColor.init(red: 0.0, green: 1.0, blue: 0.0, alpha: 0.5)
+                self.showStopSign = false
             }
             
             boxLayer.borderWidth = 5.0

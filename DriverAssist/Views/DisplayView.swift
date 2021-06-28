@@ -9,6 +9,7 @@ import SwiftUI
 
 struct DisplayView: View {
     @ObservedObject var locationViewModel = LocationViewModel()
+    @ObservedObject private var cameraViewModel = CameraViewController()
     
     var body: some View {
             HStack {
@@ -27,10 +28,16 @@ struct DisplayView: View {
             // Icon
                 Spacer()
                 VStack {
-                    Image("stop-sign")
+                    if cameraViewModel.showStopSign == false {
+                        
+                        Image("stop-sign")
                         .frame(width: 32.0, height: 32.0)
                         .padding(40.0)
                         .accentColor(.red)
+                    }
+                    else {
+                        Spacer()
+                    }
                     Spacer()
                 }
             }

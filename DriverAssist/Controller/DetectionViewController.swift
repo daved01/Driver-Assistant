@@ -11,9 +11,9 @@ import AVKit
 import SwiftUI
 import Vision
 
+/*
 // TODO: Need to move this to the CameraViewController stuff!!!
 final class DetectionViewController: UIViewController, AVCaptureVideoDataOutputSampleBufferDelegate, ObservableObject {
-    //@Published var firstLabel: String = "Init - banana??"
     private var firstLabel: String = ""
     
     
@@ -192,3 +192,4 @@ extension DetectionViewController: UIViewControllerRepresentable {
     public func updateUIViewController(_ uiViewController: DetectionViewController, context: UIViewControllerRepresentableContext<DetectionViewController>) {
     }
 }
+*/
