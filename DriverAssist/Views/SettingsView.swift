@@ -8,17 +8,18 @@
 import SwiftUI
 
 struct Settings: View {
-    @State private var useModel = false
+    //@State private var showBoundingBoxes = true
     @State private var alwaysRecord = false
     @State private var shareData = false
     
+    @AppStorage("visualizeDetections") var visualizeDetections = true
     @AppStorage("metricUnits") var metricUnits = false
     
     var body: some View {
         List {
             HStack {
-                Toggle(isOn: $useModel) {
-                    Text("Use model")
+                Toggle(isOn: $visualizeDetections) {
+                    Text("Visualize detections")
                     .font(.body)
                 }
             }
