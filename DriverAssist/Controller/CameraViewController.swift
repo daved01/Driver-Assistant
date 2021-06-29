@@ -23,7 +23,7 @@ final class CameraViewController: UIViewController, AVCaptureVideoDataOutputSamp
     private var previewLayer: AVCaptureVideoPreviewLayer! = nil
     
     override func viewDidLoad() {
-                
+        
         previewView = UIView(frame: CGRect(x:0, y:0, width: UIScreen.main.bounds.size.width, height: UIScreen.main.bounds.size.height))
         previewView.contentMode = UIView.ContentMode.scaleAspectFit
         
@@ -49,14 +49,6 @@ final class CameraViewController: UIViewController, AVCaptureVideoDataOutputSamp
         view.layer.addSublayer(previewLayer)
         previewLayer.frame = view.frame
         
-        let dataOutput = AVCaptureVideoDataOutput()
-        dataOutput.setSampleBufferDelegate(self, queue: DispatchQueue(label: "videoQueue"))
-        captureSession.addOutput(dataOutput)
-        
-        let captureConnection = dataOutput.connection(with: .video)
-        
-        // Always process the frames
-        captureConnection?.isEnabled = true
         do {
             try  captureDevice.lockForConfiguration()
             let dimensions = CMVideoFormatDescriptionGetDimensions((captureDevice.activeFormat.formatDescription))
@@ -66,8 +58,52 @@ final class CameraViewController: UIViewController, AVCaptureVideoDataOutputSamp
         } catch {
             print(error)
         }
+        
+        // TODO: DetectionLayer is not as wide as the video output. Is that a problem??????
+        detectionLayer.backgroundColor = CGColor.init(red: 1.0, green: 0.0, blue: 0.0, alpha: 0.5)
+        detectionLayer.bounds = CGRect(x: 0.0,
+                                         y: 0.0,
+                                         width: bufferSize.width,
+                                         height: bufferSize.height)
+        detectionLayer.position = CGPoint(x: previewLayer.bounds.midX, y: previewLayer.bounds.midY)
+        previewLayer.addSublayer(detectionLayer)
         print(bufferSize.width)
         print(bufferSize.height)
+        
+        // Update geometry
+        let bounds = previewLayer.bounds
+        var scale: CGFloat
+        
+        let xScale: CGFloat = bounds.size.width / bufferSize.height
+        let yScale: CGFloat = bounds.size.height / bufferSize.width
+        
+        scale = fmax(xScale, yScale)
+        if scale.isInfinite {
+            scale = 1.0
+        }
+        CATransaction.begin()
+        CATransaction.setValue(kCFBooleanTrue, forKey: kCATransactionDisableActions)
+        
+        // rotate the layer into screen orientation and scale and mirror
+        detectionLayer.setAffineTransform(CGAffineTransform(rotationAngle: CGFloat(0.0)).scaledBy(x: scale, y: scale))
+        // center the layer
+        detectionLayer.position = CGPoint(x: bounds.midX, y: bounds.midY)
+        
+        CATransaction.commit()
+        
+        
+        //aaaaaaaa
+        
+        
+        let dataOutput = AVCaptureVideoDataOutput()
+        dataOutput.setSampleBufferDelegate(self, queue: DispatchQueue(label: "videoQueue"))
+        captureSession.addOutput(dataOutput)
+        
+        let captureConnection = dataOutput.connection(with: .video)
+        
+        // Always process the frames
+        captureConnection?.isEnabled = true
+
     }
     
     func captureOutput(_ output: AVCaptureOutput, didOutput sampleBuffer: CMSampleBuffer, from connection: AVCaptureConnection) {
@@ -90,7 +126,7 @@ final class CameraViewController: UIViewController, AVCaptureVideoDataOutputSamp
     
     func drawResults(_ results: [Any]) {
         detectionLayer.sublayers = nil // Clear previous detections from the detectionlayer
-        
+    
         for observation in results where observation is VNRecognizedObjectObservation {
             
             guard let objectObservation = observation as? VNRecognizedObjectObservation else {
@@ -123,8 +159,10 @@ final class CameraViewController: UIViewController, AVCaptureVideoDataOutputSamp
         // Place the label on top of the box
         func drawLabel(objectBounds: CGRect, label: String ) -> CATextLayer {
             let labelLayer = CATextLayer()
-            labelLayer.frame = CGRect(x: objectBounds.midX, y: objectBounds.midY, width: objectBounds.maxX - objectBounds.minX, height: objectBounds.maxY - objectBounds.minY)
-            labelLayer.fontSize = 14
+            //labelLayer.frame = CGRect(x: objectBounds.midX, y: objectBounds.midY, width: objectBounds.maxX - objectBounds.minX, height: objectBounds.maxY - objectBounds.minY)
+            labelLayer.bounds = CGRect(x: 0, y: 0, width: objectBounds.size.height - 10, height: objectBounds.size.width - 10)
+            labelLayer.position = CGPoint(x: objectBounds.midX, y: objectBounds.midY)
+            labelLayer.fontSize = 10
             labelLayer.alignmentMode = .left
             labelLayer.string = label
             labelLayer.truncationMode = .end
@@ -149,7 +187,7 @@ final class CameraViewController: UIViewController, AVCaptureVideoDataOutputSamp
                 self.showStopSign = false
             }
             
-            boxLayer.borderWidth = 5.0
+            boxLayer.borderWidth = 3.0
             return boxLayer
         }
     }
