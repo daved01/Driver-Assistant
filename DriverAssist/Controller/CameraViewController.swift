@@ -26,7 +26,6 @@ final class CameraViewController: UIViewController, AVCaptureVideoDataOutputSamp
         
         previewView = UIView(frame: CGRect(x:0, y:0, width: UIScreen.main.bounds.size.width, height: UIScreen.main.bounds.size.height))
         previewView.contentMode = UIView.ContentMode.scaleAspectFit
-        
         view.addSubview(previewView)
         
         // Prepare
@@ -44,11 +43,7 @@ final class CameraViewController: UIViewController, AVCaptureVideoDataOutputSamp
         // Adds full screen view
         previewLayer.videoGravity = AVLayerVideoGravity.resizeAspectFill
         previewLayer.connection?.videoOrientation = .landscapeRight
-        
-        // Add to UIView layer previewLayer
-        view.layer.addSublayer(previewLayer)
-        previewLayer.frame = view.frame
-        
+               
         do {
             try  captureDevice.lockForConfiguration()
             let dimensions = CMVideoFormatDescriptionGetDimensions((captureDevice.activeFormat.formatDescription))
@@ -60,22 +55,31 @@ final class CameraViewController: UIViewController, AVCaptureVideoDataOutputSamp
         }
         
         // TODO: DetectionLayer is not as wide as the video output. Is that a problem??????
-        detectionLayer.backgroundColor = CGColor.init(red: 1.0, green: 0.0, blue: 0.0, alpha: 0.5)
+        //detectionLayer.backgroundColor = CGColor.init(red: 1.0, green: 0.0, blue: 0.0, alpha: 0.5)
         detectionLayer.bounds = CGRect(x: 0.0,
                                          y: 0.0,
                                          width: bufferSize.width,
                                          height: bufferSize.height)
         detectionLayer.position = CGPoint(x: previewLayer.bounds.midX, y: previewLayer.bounds.midY)
         previewLayer.addSublayer(detectionLayer)
-        print(bufferSize.width)
-        print(bufferSize.height)
         
+        // Add video preview stream (UIView layer) in previewLayer
+        view.layer.addSublayer(previewLayer)
+        previewLayer.frame = view.frame
+        
+
         // Update geometry
         let bounds = previewLayer.bounds
         var scale: CGFloat
         
         let xScale: CGFloat = bounds.size.width / bufferSize.height
         let yScale: CGFloat = bounds.size.height / bufferSize.width
+        
+        print(xScale)
+        print(yScale)
+        
+        
+        
         
         scale = fmax(xScale, yScale)
         if scale.isInfinite {
@@ -110,6 +114,7 @@ final class CameraViewController: UIViewController, AVCaptureVideoDataOutputSamp
         guard let pixelBuffer: CVPixelBuffer = CMSampleBufferGetImageBuffer(sampleBuffer) else { return }
         
         // Load model
+        //let model2 = yolov5sTraffic()
         guard let model = try? VNCoreMLModel(for: ObjectDetector(configuration: .init()).model) else { return }
         
         let request = VNCoreMLRequest(model: model) { (finishedReq, err) in

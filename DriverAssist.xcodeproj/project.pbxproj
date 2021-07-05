@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		632DF5E326729F4E0016D849 /* classes.txt in Resources */ = {isa = PBXBuildFile; fileRef = 632DF5E226729F4E0016D849 /* classes.txt */; };
 		632E72352672078500C6E81E /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 632E72342672078500C6E81E /* SettingsView.swift */; };
-		6354B0DB26871E06000662CD /* ObjectDetector.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 6354B0DA26871E06000662CD /* ObjectDetector.mlmodel */; };
 		6354B0DF26872E4C000662CD /* DetectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6354B0DE26872E4C000662CD /* DetectionView.swift */; };
 		6386649C2681235000B63AFD /* DisplayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6386649B2681235000B63AFD /* DisplayView.swift */; };
 		6386649E2681256A00B63AFD /* LocationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6386649D2681256A00B63AFD /* LocationController.swift */; };
@@ -21,6 +20,7 @@
 		63B86C19266C067800673B3A /* DriverAssistUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63B86C18266C067800673B3A /* DriverAssistUITests.swift */; };
 		63D2A378266CB8550097AE86 /* LibraryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63D2A377266CB8550097AE86 /* LibraryView.swift */; };
 		63D2A380266CCF7A0097AE86 /* ImagePickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63D2A37F266CCF7A0097AE86 /* ImagePickerView.swift */; };
+		63DC680A2693539400973E31 /* ObjectDetector.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 63DC68092693539400973E31 /* ObjectDetector.mlmodel */; };
 		63E24807267346260098F26A /* CameraViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63E24806267346260098F26A /* CameraViewController.swift */; };
 		63E2480E267365FC0098F26A /* PhotoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63E2480D267365FC0098F26A /* PhotoView.swift */; };
 		63E986182688BEAA00F76CCD /* DetectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63E986172688BEAA00F76CCD /* DetectionViewController.swift */; };
@@ -46,7 +46,6 @@
 /* Begin PBXFileReference section */
 		632DF5E226729F4E0016D849 /* classes.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = classes.txt; sourceTree = "<group>"; };
 		632E72342672078500C6E81E /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
-		6354B0DA26871E06000662CD /* ObjectDetector.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = ObjectDetector.mlmodel; sourceTree = "<group>"; };
 		6354B0DE26872E4C000662CD /* DetectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetectionView.swift; sourceTree = "<group>"; };
 		6386649B2681235000B63AFD /* DisplayView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DisplayView.swift; sourceTree = "<group>"; };
 		6386649D2681256A00B63AFD /* LocationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationController.swift; sourceTree = "<group>"; };
@@ -64,6 +63,7 @@
 		63B86C1A266C067800673B3A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		63D2A377266CB8550097AE86 /* LibraryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LibraryView.swift; sourceTree = "<group>"; };
 		63D2A37F266CCF7A0097AE86 /* ImagePickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePickerView.swift; sourceTree = "<group>"; };
+		63DC68092693539400973E31 /* ObjectDetector.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = ObjectDetector.mlmodel; sourceTree = "<group>"; };
 		63E24806267346260098F26A /* CameraViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraViewController.swift; sourceTree = "<group>"; };
 		63E2480D267365FC0098F26A /* PhotoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoView.swift; sourceTree = "<group>"; };
 		63E986172688BEAA00F76CCD /* DetectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetectionViewController.swift; sourceTree = "<group>"; };
@@ -133,7 +133,7 @@
 				63B86BFD266C067800673B3A /* ContentView.swift */,
 				63B86BFF266C067800673B3A /* Assets.xcassets */,
 				63B86C04266C067800673B3A /* Info.plist */,
-				6354B0DA26871E06000662CD /* ObjectDetector.mlmodel */,
+				63DC68092693539400973E31 /* ObjectDetector.mlmodel */,
 				63B86C01266C067800673B3A /* Preview Content */,
 			);
 			path = DriverAssist;
@@ -330,13 +330,13 @@
 				63E986182688BEAA00F76CCD /* DetectionViewController.swift in Sources */,
 				63D2A378266CB8550097AE86 /* LibraryView.swift in Sources */,
 				63B86BFE266C067800673B3A /* ContentView.swift in Sources */,
-				6354B0DB26871E06000662CD /* ObjectDetector.mlmodel in Sources */,
 				63E2480E267365FC0098F26A /* PhotoView.swift in Sources */,
 				63B86BFC266C067800673B3A /* DriverAssistApp.swift in Sources */,
 				632E72352672078500C6E81E /* SettingsView.swift in Sources */,
 				6354B0DF26872E4C000662CD /* DetectionView.swift in Sources */,
 				6386649E2681256A00B63AFD /* LocationController.swift in Sources */,
 				63D2A380266CCF7A0097AE86 /* ImagePickerView.swift in Sources */,
+				63DC680A2693539400973E31 /* ObjectDetector.mlmodel in Sources */,
 				63E24807267346260098F26A /* CameraViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -505,7 +505,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = dk.DriverAssist;
+				PRODUCT_BUNDLE_IDENTIFIER = dk.DriverAssist1;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
@@ -529,7 +529,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = dk.DriverAssist;
+				PRODUCT_BUNDLE_IDENTIFIER = dk.DriverAssist1;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
