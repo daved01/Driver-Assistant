@@ -9,10 +9,9 @@
 /* Begin PBXBuildFile section */
 		632DF5E326729F4E0016D849 /* classes.txt in Resources */ = {isa = PBXBuildFile; fileRef = 632DF5E226729F4E0016D849 /* classes.txt */; };
 		632E72352672078500C6E81E /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 632E72342672078500C6E81E /* SettingsView.swift */; };
-		633ED746269787780070F5E8 /* yolov5sTraffic-transfer.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 633ED745269787780070F5E8 /* yolov5sTraffic-transfer.mlmodel */; };
 		6354B0DF26872E4C000662CD /* DetectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6354B0DE26872E4C000662CD /* DetectionView.swift */; };
-		63658D7D26948FF800417C8E /* MobileNetV2.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 63658D7C26948FF800417C8E /* MobileNetV2.mlmodel */; };
-		63658D832694A71A00417C8E /* YOLOv3.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 63658D822694A71A00417C8E /* YOLOv3.mlmodel */; };
+		63832B382698A84100590A9F /* YOLOv3TinyFP16.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 63832B372698A84100590A9F /* YOLOv3TinyFP16.mlmodel */; };
+		63832B3A2698A8FF00590A9F /* YOLOv3Tiny.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 63832B392698A8FF00590A9F /* YOLOv3Tiny.mlmodel */; };
 		6386649C2681235000B63AFD /* DisplayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6386649B2681235000B63AFD /* DisplayView.swift */; };
 		6386649E2681256A00B63AFD /* LocationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6386649D2681256A00B63AFD /* LocationController.swift */; };
 		63B86BFC266C067800673B3A /* DriverAssistApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63B86BFB266C067800673B3A /* DriverAssistApp.swift */; };
@@ -48,10 +47,9 @@
 /* Begin PBXFileReference section */
 		632DF5E226729F4E0016D849 /* classes.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = classes.txt; sourceTree = "<group>"; };
 		632E72342672078500C6E81E /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
-		633ED745269787780070F5E8 /* yolov5sTraffic-transfer.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = "yolov5sTraffic-transfer.mlmodel"; sourceTree = "<group>"; };
 		6354B0DE26872E4C000662CD /* DetectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetectionView.swift; sourceTree = "<group>"; };
-		63658D7C26948FF800417C8E /* MobileNetV2.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = MobileNetV2.mlmodel; sourceTree = "<group>"; };
-		63658D822694A71A00417C8E /* YOLOv3.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = YOLOv3.mlmodel; sourceTree = "<group>"; };
+		63832B372698A84100590A9F /* YOLOv3TinyFP16.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = YOLOv3TinyFP16.mlmodel; sourceTree = "<group>"; };
+		63832B392698A8FF00590A9F /* YOLOv3Tiny.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = YOLOv3Tiny.mlmodel; sourceTree = "<group>"; };
 		6386649B2681235000B63AFD /* DisplayView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DisplayView.swift; sourceTree = "<group>"; };
 		6386649D2681256A00B63AFD /* LocationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationController.swift; sourceTree = "<group>"; };
 		63B86BF8266C067800673B3A /* DriverAssist.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DriverAssist.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -137,9 +135,8 @@
 				63B86BFD266C067800673B3A /* ContentView.swift */,
 				63B86BFF266C067800673B3A /* Assets.xcassets */,
 				63B86C04266C067800673B3A /* Info.plist */,
-				63658D7C26948FF800417C8E /* MobileNetV2.mlmodel */,
-				633ED745269787780070F5E8 /* yolov5sTraffic-transfer.mlmodel */,
-				63658D822694A71A00417C8E /* YOLOv3.mlmodel */,
+				63832B372698A84100590A9F /* YOLOv3TinyFP16.mlmodel */,
+				63832B392698A8FF00590A9F /* YOLOv3Tiny.mlmodel */,
 				63B86C01266C067800673B3A /* Preview Content */,
 			);
 			path = DriverAssist;
@@ -339,12 +336,11 @@
 				63E2480E267365FC0098F26A /* PhotoView.swift in Sources */,
 				63B86BFC266C067800673B3A /* DriverAssistApp.swift in Sources */,
 				632E72352672078500C6E81E /* SettingsView.swift in Sources */,
-				633ED746269787780070F5E8 /* yolov5sTraffic-transfer.mlmodel in Sources */,
+				63832B3A2698A8FF00590A9F /* YOLOv3Tiny.mlmodel in Sources */,
 				6354B0DF26872E4C000662CD /* DetectionView.swift in Sources */,
 				6386649E2681256A00B63AFD /* LocationController.swift in Sources */,
 				63D2A380266CCF7A0097AE86 /* ImagePickerView.swift in Sources */,
-				63658D7D26948FF800417C8E /* MobileNetV2.mlmodel in Sources */,
-				63658D832694A71A00417C8E /* YOLOv3.mlmodel in Sources */,
+				63832B382698A84100590A9F /* YOLOv3TinyFP16.mlmodel in Sources */,
 				63E24807267346260098F26A /* CameraViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

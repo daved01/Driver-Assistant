@@ -112,7 +112,7 @@ final class CameraViewController: UIViewController, AVCaptureVideoDataOutputSamp
         
         // Load model
         //let model2 = yolov5sTraffic()
-        guard let model = try? VNCoreMLModel(for: yolov5sTraffic_transfer(configuration: .init()).model) else { return }
+        guard let model = try? VNCoreMLModel(for: YOLOv3TinyFP16(configuration: .init()).model) else { return }
         
         let request = VNCoreMLRequest(model: model) { (finishedReq, err) in
             //guard let results = finishedReq.results as? [VNDetectedObjectObservation] else { return }
