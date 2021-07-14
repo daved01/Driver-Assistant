@@ -18,6 +18,12 @@ class ViewController: UIViewController, AVCaptureVideoDataOutputSampleBufferDele
     var bufferSize: CGSize = .zero
     var rootLayer: CALayer! = nil
     
+    // Show and hide the navigation bar icons on the main screen
+    @IBAction func didTapView(_ sender: UITapGestureRecognizer) {
+        //print("did tap view", sender)
+        
+    }
+    
     @IBOutlet weak private var previewView: UIView!
     private let session = AVCaptureSession()
     private var previewLayer: AVCaptureVideoPreviewLayer! = nil
@@ -33,13 +39,10 @@ class ViewController: UIViewController, AVCaptureVideoDataOutputSampleBufferDele
         super.viewDidLoad()
         setupAVCapture() // Preview stuff
     }
-    
-    
+       
     
     fileprivate func setupConstraints() {
         navigationView.view.backgroundColor = UIColor.clear // Needed to not hide other layers
-        //navigationView.view.isOpaque = true
-        
         navigationView.view.translatesAutoresizingMaskIntoConstraints = false
         navigationView.view.topAnchor.constraint(equalTo: view.topAnchor).isActive = true
         navigationView.view.bottomAnchor.constraint(equalTo: view.bottomAnchor).isActive = true
@@ -49,8 +52,6 @@ class ViewController: UIViewController, AVCaptureVideoDataOutputSampleBufferDele
     
     fileprivate func setupConstraintsDisplay() {
         displayView.view.backgroundColor = UIColor.clear // Needed to not hide other layers
-        //displayView.view.isOpaque = true
-        
         displayView.view.translatesAutoresizingMaskIntoConstraints = false
         displayView.view.topAnchor.constraint(equalTo: view.topAnchor).isActive = true
         displayView.view.bottomAnchor.constraint(equalTo: view.bottomAnchor).isActive = true
@@ -114,11 +115,8 @@ class ViewController: UIViewController, AVCaptureVideoDataOutputSampleBufferDele
         previewLayer.videoGravity = AVLayerVideoGravity.resizeAspectFill
         rootLayer = previewView.layer
         previewLayer.frame = rootLayer.bounds
-        //rootLayer.insertSublayer(previewLayer, at: 1) // Add below SwiftUI stuff. Index 2 is educated guess.
-        //rootLayer.addSublayer(previewLayer)
         rootLayer.addSublayer(previewLayer)
         
-       
         // Shows the current speed and signs at the top of the screen
         addChild(displayView)
         view.addSubview(displayView.view)
@@ -128,8 +126,6 @@ class ViewController: UIViewController, AVCaptureVideoDataOutputSampleBufferDele
         addChild(navigationView) // Allows embedding the custom SwiftUI view
         view.addSubview(navigationView.view)
         setupConstraints()
-        
-        
     }
     
     func startCaptureSession() {
@@ -143,7 +139,6 @@ class ViewController: UIViewController, AVCaptureVideoDataOutputSampleBufferDele
     }
     
     func captureOutput(_ captureOutput: AVCaptureOutput, didDrop didDropSampleBuffer: CMSampleBuffer, from connection: AVCaptureConnection) {
-        // print("frame dropped")
     }
     
     public func exifOrientationFromDeviceOrientation() -> CGImagePropertyOrientation {

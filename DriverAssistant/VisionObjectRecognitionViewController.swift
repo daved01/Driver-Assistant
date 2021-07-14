@@ -55,15 +55,11 @@ class VisionObjectRecognitionViewController: ViewController {
             // Select only the label with the highest confidence.
             let topLabelObservation = objectObservation.labels[0]
             firstLabel = topLabelObservation.identifier
-            print(firstLabel)
-            
-            
             let objectBounds = VNImageRectForNormalizedRect(objectObservation.boundingBox, Int(bufferSize.width), Int(bufferSize.height))
             
             // Visualize results if selected in settings
             let visualizeDetections = UserDefaults.standard.bool(forKey: "visualizeDetections")
             if visualizeDetections == true {
-                print(visualizeDetections)
                 let shapeLayer = self.drawBoxes(objectBounds, label: firstLabel)
                 let textLayer = self.drawLabels(objectBounds,
                                                                 identifier: topLabelObservation.identifier,
@@ -155,7 +151,6 @@ class VisionObjectRecognitionViewController: ViewController {
     }
     
     func drawBoxes(_ objectBounds: CGRect, label: String) -> CAShapeLayer {
-        print("Drawing box")
         let boxLayer = CAShapeLayer()
         boxLayer.bounds = objectBounds
         boxLayer.position = CGPoint(x: objectBounds.midX, y: objectBounds.midY)

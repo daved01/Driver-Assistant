@@ -28,7 +28,7 @@ struct DisplayView: View {
                 // Icon
                 Spacer()
                 VStack {
-                    let showSign: Bool = true
+                    let showSign: Bool = false
                     if showSign == true {
                         Image("stop-sign")
                         .frame(width: 32.0, height: 32.0)
@@ -41,6 +41,7 @@ struct DisplayView: View {
                     Spacer()
                 }
             }
+            .navigationBarHidden(true)
     }
 }
 

@@ -7,9 +7,11 @@
 
 import SwiftUI
 
+
 struct NavigationView: View {
     let elementColour = Color(.blue)
-    
+    @State private var isHidden: Bool = false
+      
     var body: some View {
         VStack {
             Spacer()
@@ -35,9 +37,13 @@ struct NavigationView: View {
                         }
                     }
                     Spacer()
-                    }
+                }
+            .opacity(isHidden ? 0: 1)
         }
+        .contentShape(Rectangle()) // Makes full screen tapable
         .navigationBarHidden(true)
+        .gesture(TapGesture()
+                    .onEnded{isHidden.toggle()} )
     }
 }
 

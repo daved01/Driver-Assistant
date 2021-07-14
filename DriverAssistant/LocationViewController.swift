@@ -39,7 +39,7 @@ extension LocationViewModel: CLLocationManagerDelegate {
         var speed = location.speed
         
         // Prevent the negative speed indication when moving slowly
-        if speed < 0.5 {
+        if speed < 0 {
             speed = 0
         }
         if metricUnits == false {
