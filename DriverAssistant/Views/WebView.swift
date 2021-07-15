@@ -20,6 +20,7 @@ struct WebView: View {
                         Text("Loading...")
                     }
                 }
+                .ignoresSafeArea()
                 .navigationBarTitle(Text(webViewModel.title), displayMode: .inline)
                 .navigationBarItems(leading: Button(action: {
                     webViewModel.shouldGoBack.toggle()
@@ -36,6 +37,7 @@ struct WebView: View {
                 )
             
         }
+   
 }
 
 struct NavigationView_Previews: PreviewProvider {
