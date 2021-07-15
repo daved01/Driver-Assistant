@@ -12,17 +12,16 @@ struct NavigationView: View {
     let elementColour = Color(.blue)
     @State private var isHidden: Bool = true
     
-      
     var body: some View {
         VStack {
             Spacer()
             HStack {
                 Spacer()
-                NavigationLink(destination: LibraryView()) {
+                NavigationLink(destination: WebView()) {
                     VStack {
-                        Image("sharp_video_library_black_24pt")
+                        Image("baseline_lightbulb_black_24pt")
                         .foregroundColor(elementColour)
-                        Text("Library")
+                        Text("How detection works")
                         .font(.caption)
                         .foregroundColor(elementColour)
                         }

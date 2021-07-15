@@ -22,6 +22,13 @@ struct Settings: View {
                 }
             }
             HStack(alignment: .center) {
+                Toggle(isOn: $metricUnits) {
+                    Text("Use metric units")
+                    .font(.body)
+                }
+                
+            }
+            HStack(alignment: .center) {
                 Toggle(isOn: $alwaysRecord) {
                     Text("Always record")
                     .font(.body)
@@ -32,13 +39,6 @@ struct Settings: View {
                     Text("Share data")
                     .font(.body)
                 }
-            }
-            HStack(alignment: .center) {
-                Toggle(isOn: $metricUnits) {
-                    Text("Use metric units")
-                    .font(.body)
-                }
-                
             }
         }
         .navigationBarTitle("Settings")
