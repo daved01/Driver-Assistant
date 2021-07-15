@@ -10,7 +10,7 @@ import SwiftUI
 
 struct NavigationView: View {
     let elementColour = Color(.blue)
-    @State private var isHidden: Bool = false
+    @State private var isHidden: Bool = true
       
     var body: some View {
         VStack {
