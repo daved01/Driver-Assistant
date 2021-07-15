@@ -9,8 +9,9 @@ import UIKit
 import AVFoundation
 import Vision
 
-class VisionObjectRecognitionViewController: ViewController {
+class VisionObjectRecognitionViewController: ViewController, ObservableObject {
     
+    @Published var showStopSign: Bool = false
     private var detectionOverlay: CALayer! = nil
     private var firstLabel: String = ""
     
@@ -159,11 +160,11 @@ class VisionObjectRecognitionViewController: ViewController {
         // Box colour depending on label
         if label == "Banana" {
             boxLayer.borderColor = CGColor.init(red: 1.0, green: 1.0, blue: 0.0, alpha: 0.5)
-            //self.showStopSign = true
+            self.showStopSign = true
         }
         else {
             boxLayer.borderColor = CGColor.init(red: 0.0, green: 1.0, blue: 0.0, alpha: 0.5)
-            //self.showStopSign = false
+            self.showStopSign = false
         }
 
         boxLayer.borderWidth = 3.0
@@ -171,3 +172,4 @@ class VisionObjectRecognitionViewController: ViewController {
     }
     
 }
+

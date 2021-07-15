@@ -21,15 +21,14 @@ class ViewController: UIViewController, AVCaptureVideoDataOutputSampleBufferDele
     // Show and hide the navigation bar icons on the main screen
     @IBAction func didTapView(_ sender: UITapGestureRecognizer) {
         //print("did tap view", sender)
-        
     }
     
     @IBOutlet weak private var previewView: UIView!
     private let session = AVCaptureSession()
     private var previewLayer: AVCaptureVideoPreviewLayer! = nil
     private let videoDataOutput = AVCaptureVideoDataOutput()
-    
     private let videoDataOutputQueue = DispatchQueue(label: "VideoDataOutput", qos: .userInitiated, attributes: [], autoreleaseFrequency: .workItem)
+    
     
     func captureOutput(_ output: AVCaptureOutput, didOutput sampleBuffer: CMSampleBuffer, from connection: AVCaptureConnection) {
         // to be implemented in the subclass
