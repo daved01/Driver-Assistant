@@ -10,7 +10,8 @@ import SwiftUI
 
 struct WebView: View {
     @ObservedObject var webViewModel = WebViewModel(url: "https://www.neuralception.com/objectdetection")
-        
+
+    
         var body: some View {
                 ZStack {
                     WebViewContainer(webViewModel: webViewModel)
