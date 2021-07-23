@@ -10,9 +10,8 @@ import SwiftUI
 
 struct NavigationView: View {
     let elementColour = Color(.blue)
-    @State private var isHidden: Bool = true
-    
-      
+    @State private var isHidden: Bool = false
+
     var body: some View {
         VStack {
             Spacer()

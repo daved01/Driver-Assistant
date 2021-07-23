@@ -8,11 +8,10 @@
 import SwiftUI
 
 struct Settings: View {
-    @State private var alwaysRecord = false
     @State private var shareData = false
     @AppStorage("visualizeDetections") var visualizeDetections = true
     @AppStorage("metricUnits") var metricUnits = false
-    
+    @AppStorage("showSpeed") var showSpeed = true
     var body: some View {
         List {
             HStack {
@@ -22,8 +21,8 @@ struct Settings: View {
                 }
             }
             HStack(alignment: .center) {
-                Toggle(isOn: $alwaysRecord) {
-                    Text("Always record")
+                Toggle(isOn: $showSpeed) {
+                    Text("Show speed")
                     .font(.body)
                 }
             }

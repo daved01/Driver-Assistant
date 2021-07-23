@@ -15,14 +15,13 @@ class ViewController: UIViewController, AVCaptureVideoDataOutputSampleBufferDele
     let navigationView = UIHostingController(rootView: NavigationView())
     let displayView = UIHostingController(rootView: DisplayView())
     
+    @IBOutlet weak var trafficLightRed: UIImageView!
+    @IBOutlet weak var trafficLightGreen: UIImageView!
+    @IBOutlet weak var stopSign: UIImageView!
+    
     var bufferSize: CGSize = .zero
     var rootLayer: CALayer! = nil
-    
-    // Show and hide the navigation bar icons on the main screen
-    @IBAction func didTapView(_ sender: UITapGestureRecognizer) {
-        //print("did tap view", sender)
-    }
-    
+        
     @IBOutlet weak private var previewView: UIView!
     private let session = AVCaptureSession()
     private var previewLayer: AVCaptureVideoPreviewLayer! = nil
@@ -31,12 +30,16 @@ class ViewController: UIViewController, AVCaptureVideoDataOutputSampleBufferDele
     
     
     func captureOutput(_ output: AVCaptureOutput, didOutput sampleBuffer: CMSampleBuffer, from connection: AVCaptureConnection) {
-        // to be implemented in the subclass
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         setupAVCapture() // Preview stuff
+        
+        trafficLightRed.superview?.bringSubviewToFront(trafficLightRed)
+        trafficLightGreen.superview?.bringSubviewToFront(trafficLightGreen)
+        stopSign.superview?.bringSubviewToFront(stopSign)
     }
        
     
@@ -125,6 +128,7 @@ class ViewController: UIViewController, AVCaptureVideoDataOutputSampleBufferDele
         addChild(navigationView) // Allows embedding the custom SwiftUI view
         view.addSubview(navigationView.view)
         setupConstraints()
+        
     }
     
     func startCaptureSession() {

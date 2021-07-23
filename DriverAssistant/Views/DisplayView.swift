@@ -9,14 +9,12 @@ import SwiftUI
 
 struct DisplayView: View {
     @ObservedObject var locationViewModel = LocationViewModel()
-    //@ObservedObject var visionObjectRecognitionViewController = VisionObjectRecognitionViewController()
-    
+    let showSpeed = UserDefaults.standard.bool(forKey: "showSpeed")
+
     var body: some View {
             HStack {
                 Spacer()
-                Spacer()
-                Spacer()
-                Spacer()
+                if self.showSpeed == false {
                     VStack {
                         Text("\(Int(locationViewModel.currentSpeed))")
                         .font(.system(size: 82.0))
@@ -28,16 +26,9 @@ struct DisplayView: View {
                         .font(.system(size: 38.0))
                     Spacer()
                     }
+                }
                 Spacer()
                 // Icon
-                VStack {
-                    Image("stop-sign")
-                    .frame(width: 32.0, height: 32.0)
-                    .padding(40.0)
-                    .accentColor(.red)
-                        //.opacity(visionObjectRecognitionViewController.showStopSign ? 1: 0)
-                    Spacer()
-                }
             }
             .navigationBarHidden(true)
     }

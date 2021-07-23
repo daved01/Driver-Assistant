@@ -49,6 +49,12 @@ class VisionObjectRecognitionViewController: ViewController, ObservableObject {
         CATransaction.begin()
         CATransaction.setValue(kCFBooleanTrue, forKey: kCATransactionDisableActions)
         detectionOverlay.sublayers = nil // remove all the old recognized objects
+        
+        // Remove
+        trafficLightRed.isHidden = true
+        trafficLightGreen.isHidden = true
+        stopSign.isHidden = true
+        
         for observation in results where observation is VNRecognizedObjectObservation {
             guard let objectObservation = observation as? VNRecognizedObjectObservation else {
                 continue
@@ -158,13 +164,31 @@ class VisionObjectRecognitionViewController: ViewController, ObservableObject {
         boxLayer.cornerRadius = 10.0
         
         // Box colour depending on label
-        if label == "Banana" {
+        // Hierachy: Red > Green > stop sign
+        // Mapping:
+        // Red          -> Egg
+        // Green        -> Coffee
+        // Stop sign    -> Banana
+        if label == "Egg" {
             boxLayer.borderColor = CGColor.init(red: 1.0, green: 1.0, blue: 0.0, alpha: 0.5)
-            self.showStopSign = true
+            trafficLightRed.isHidden = false
+            trafficLightGreen.isHidden = true
+            stopSign.isHidden = true
+        }
+        else if label == "Coffee" {
+            boxLayer.borderColor = CGColor.init(red: 0.0, green: 1.0, blue: 0.0, alpha: 0.5)
+            trafficLightRed.isHidden = true
+            trafficLightGreen.isHidden = false
+            stopSign.isHidden = true
+        }
+        else if label == "Banana" {
+            boxLayer.borderColor = CGColor.init(red: 0.0, green: 1.0, blue: 0.0, alpha: 0.5)
+            trafficLightRed.isHidden = true
+            trafficLightGreen.isHidden = true
+            stopSign.isHidden = false
         }
         else {
             boxLayer.borderColor = CGColor.init(red: 0.0, green: 1.0, blue: 0.0, alpha: 0.5)
-            self.showStopSign = false
         }
 
         boxLayer.borderWidth = 3.0
