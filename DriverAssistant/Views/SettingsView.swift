@@ -13,29 +13,48 @@ struct Settings: View {
     @AppStorage("metricUnits") var metricUnits = false
     @AppStorage("showSpeed") var showSpeed = true
     var body: some View {
-        List {
-            HStack {
-                Toggle(isOn: $visualizeDetections) {
-                    Text("Visualize detections")
-                    .font(.body)
+        VStack {
+            List {
+                Text("Basic settings")
+                    .font(.title)
+                    .padding(0.5)
+                HStack {
+                    Toggle(isOn: $visualizeDetections) {
+                        Text("Visualize detections")
+                        .font(.body)
+                    }
                 }
-            }
-            HStack(alignment: .center) {
-                Toggle(isOn: $showSpeed) {
-                    Text("Show speed")
+                HStack(alignment: .center) {
+                    Toggle(isOn: $showSpeed) {
+                        Text("Show speed")
+                        .font(.body)
+                    }
+                }
+                    
+                HStack(alignment: .center) {
+                    Toggle(isOn: $metricUnits) {
+                        Text("Use metric units")
+                        .font(.body)
+                    }
 
-                Toggle(isOn: $metricUnits) {
-                    Text("Use metric units")
-
+                }
+                Text("Further")
+                    .font(.title)
+                    .padding(0.5)
+                NavigationLink(destination: WebView()) {
+                Text("Learn how detection works")
                     .font(.body)
                 }
                 
+
             }
 
         }
         .navigationBarTitle("Settings")
     }
-    }
+        
+        
+    
 }
 
 struct Settings_Previews: PreviewProvider {

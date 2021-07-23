@@ -17,16 +17,6 @@ struct NavigationView: View {
             Spacer()
             HStack {
                 Spacer()
-                NavigationLink(destination: WebView()) {
-                    VStack {
-                        Image("baseline_lightbulb_black_24pt")
-                        .foregroundColor(elementColour)
-                        Text("How detection works")
-                        .font(.caption)
-                        .foregroundColor(elementColour)
-                        }
-                    }
-                    Spacer()
                     NavigationLink(destination: Settings()) {
                     VStack {
                         Image("baseline_settings_black_24pt")

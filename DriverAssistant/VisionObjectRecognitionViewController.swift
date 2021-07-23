@@ -33,7 +33,6 @@ class VisionObjectRecognitionViewController: ViewController, ObservableObject {
             let objectRecognition = VNCoreMLRequest(model: visionModel, completionHandler: { (request, error) in
                 DispatchQueue.main.async(execute: {
                     if let results = request.results {
-                        print(results)
                         self.drawVisionRequestResults(results)
                     }
                 })
