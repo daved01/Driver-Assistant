@@ -7,6 +7,8 @@
 
 import SwiftUI
 
+
+
 struct DisplayView: View {
     @ObservedObject var locationViewModel = LocationViewModel()
     let showSpeed = UserDefaults.standard.bool(forKey: "showSpeed")
@@ -19,9 +21,9 @@ struct DisplayView: View {
                         Text("\(Int(locationViewModel.currentSpeed))")
                         .font(.system(size: 82.0))
                         .fontWeight(.regular)
-                        .foregroundColor(.black)
+                        .foregroundColor(.white)
                         Text(locationViewModel.unitString)
-                        .foregroundColor(.black)
+                        .foregroundColor(.white)
                         .fontWeight(.light)
                         .font(.system(size: 38.0))
                     Spacer()

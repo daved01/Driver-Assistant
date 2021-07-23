@@ -28,7 +28,6 @@ class ViewController: UIViewController, AVCaptureVideoDataOutputSampleBufferDele
     private let videoDataOutput = AVCaptureVideoDataOutput()
     private let videoDataOutputQueue = DispatchQueue(label: "VideoDataOutput", qos: .userInitiated, attributes: [], autoreleaseFrequency: .workItem)
     
-    
     func captureOutput(_ output: AVCaptureOutput, didOutput sampleBuffer: CMSampleBuffer, from connection: AVCaptureConnection) {
     }
     
@@ -119,7 +118,7 @@ class ViewController: UIViewController, AVCaptureVideoDataOutputSampleBufferDele
         previewLayer.frame = rootLayer.bounds
         rootLayer.addSublayer(previewLayer)
         
-        // Shows the current speed and signs at the top of the screen
+        // Shows the current speed at the top of the screen
         addChild(displayView)
         view.addSubview(displayView.view)
         setupConstraintsDisplay()
@@ -128,7 +127,6 @@ class ViewController: UIViewController, AVCaptureVideoDataOutputSampleBufferDele
         addChild(navigationView) // Allows embedding the custom SwiftUI view
         view.addSubview(navigationView.view)
         setupConstraints()
-        
     }
     
     func startCaptureSession() {

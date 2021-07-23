@@ -33,6 +33,7 @@ class VisionObjectRecognitionViewController: ViewController, ObservableObject {
             let objectRecognition = VNCoreMLRequest(model: visionModel, completionHandler: { (request, error) in
                 DispatchQueue.main.async(execute: {
                     if let results = request.results {
+                        print(results)
                         self.drawVisionRequestResults(results)
                     }
                 })
@@ -54,6 +55,7 @@ class VisionObjectRecognitionViewController: ViewController, ObservableObject {
         trafficLightRed.isHidden = true
         trafficLightGreen.isHidden = true
         stopSign.isHidden = true
+        
         
         for observation in results where observation is VNRecognizedObjectObservation {
             guard let objectObservation = observation as? VNRecognizedObjectObservation else {

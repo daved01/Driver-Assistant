@@ -11,8 +11,8 @@ import Combine
 
 
 class LocationViewModel: NSObject, ObservableObject {
-    @Published var userLatitude: Double = 0
-    @Published var userLongitude: Double = 0
+    //@Published var userLatitude: Double = 0
+    //@Published var userLongitude: Double = 0
     @Published var currentSpeed: Double = 0
     @Published var unitString: String = "MPH"
     
@@ -24,15 +24,25 @@ class LocationViewModel: NSObject, ObservableObject {
       self.locationManager.desiredAccuracy = kCLLocationAccuracyBest
       self.locationManager.requestWhenInUseAuthorization()
       self.locationManager.startUpdatingLocation()
+      //self.locationManager.allowsBackgroundLocationUpdates = false
     }
+    
+    func stopUpdates() {
+        
+        self.locationManager.stopUpdatingLocation()
+    }
+    func resumeUpdates() {
+        self.locationManager.startUpdatingLocation()
+    }
+    
 }
 
 extension LocationViewModel: CLLocationManagerDelegate {
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         guard let location = locations.last else { return }
     
-        userLatitude = location.coordinate.latitude
-        userLongitude = location.coordinate.longitude
+        //userLatitude = location.coordinate.latitude
+        //userLongitude = location.coordinate.longitude
         
         // Get speed in either unit
         let metricUnits = UserDefaults.standard.bool(forKey: "metricUnits")
