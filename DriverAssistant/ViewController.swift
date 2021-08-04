@@ -9,6 +9,7 @@ import UIKit
 import AVFoundation
 import Vision
 import SwiftUI
+import AVKit
 
 class ViewController: UIViewController, AVCaptureVideoDataOutputSampleBufferDelegate {
     
@@ -34,7 +35,8 @@ class ViewController: UIViewController, AVCaptureVideoDataOutputSampleBufferDele
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        setupAVCapture() // Preview stuff
+        //setupAVCapture() // Preview stuff
+        setupVideoView()
         
         trafficLightRed.superview?.bringSubviewToFront(trafficLightRed)
         trafficLightGreen.superview?.bringSubviewToFront(trafficLightGreen)
@@ -63,6 +65,33 @@ class ViewController: UIViewController, AVCaptureVideoDataOutputSampleBufferDele
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    func setupVideoView() {
+        guard let path = Bundle.main.path(forResource: "urban-3", ofType: "mp4") else {return}
+        let videoUrl = URL(fileURLWithPath: path)
+        let player = AVPlayer(url: videoUrl)
+        
+        // This code uses the player layer. No controls, but we can integrate it into other layers.
+        let previewLayer = AVPlayerLayer(player: player)
+        previewLayer.frame = self.view.bounds
+        previewLayer.videoGravity = AVLayerVideoGravity.resizeAspectFill
+        //self.view.layer.addSublayer(playerLayer)
+        
+        rootLayer = previewView.layer
+        //previewLayer.frame = rootLayer.bounds
+        rootLayer.addSublayer(previewLayer)
+        
+        // Shows the current speed at the top of the screen
+        addChild(displayView)
+        view.addSubview(displayView.view)
+        setupConstraintsDisplay()
+        
+        // Add layers for display and navigation from SwiftUI
+        addChild(navigationView) // Allows embedding the custom SwiftUI view
+        view.addSubview(navigationView.view)
+        setupConstraints()
+        player.play()
     }
     
     func setupAVCapture() {

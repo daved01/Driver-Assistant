@@ -15,6 +15,7 @@
 		63832B7F269A249000590A9F /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63832B7E269A249000590A9F /* SettingsView.swift */; };
 		63832B81269A24BF00590A9F /* LibraryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63832B80269A24BF00590A9F /* LibraryView.swift */; };
 		63832B84269A253800590A9F /* LocationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63832B83269A253800590A9F /* LocationViewController.swift */; };
+		6386499E26B48A5E006D6F0A /* urban-3.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 6386499D26B487DF006D6F0A /* urban-3.mp4 */; };
 		FA68723920AA028000D82F25 /* ObjectDetector.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = FA68723820AA028000D82F25 /* ObjectDetector.mlmodel */; };
 		FAB417F62099308400494E9C /* VisionObjectRecognitionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAB417F52099308400494E9C /* VisionObjectRecognitionViewController.swift */; };
 		FAD5009F1ED668B60074D713 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAD5009E1ED668B60074D713 /* AppDelegate.swift */; };
@@ -33,6 +34,7 @@
 		63832B7E269A249000590A9F /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 		63832B80269A24BF00590A9F /* LibraryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LibraryView.swift; sourceTree = "<group>"; };
 		63832B83269A253800590A9F /* LocationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationViewController.swift; sourceTree = "<group>"; };
+		6386499D26B487DF006D6F0A /* urban-3.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = "urban-3.mp4"; sourceTree = "<group>"; };
 		7984D3D3A63BDFC4A07FEF8F /* SampleCode.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; name = SampleCode.xcconfig; path = Configuration/SampleCode.xcconfig; sourceTree = "<group>"; };
 		FA68723820AA028000D82F25 /* ObjectDetector.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = ObjectDetector.mlmodel; sourceTree = "<group>"; };
 		FAB417F52099308400494E9C /* VisionObjectRecognitionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VisionObjectRecognitionViewController.swift; sourceTree = "<group>"; };
@@ -103,6 +105,7 @@
 				FAB417F52099308400494E9C /* VisionObjectRecognitionViewController.swift */,
 				63832B83269A253800590A9F /* LocationViewController.swift */,
 				FAD500A21ED668B60074D713 /* Main.storyboard */,
+				6386499D26B487DF006D6F0A /* urban-3.mp4 */,
 				FAD500A51ED668B60074D713 /* Assets.xcassets */,
 				FAD500A71ED668B60074D713 /* LaunchScreen.storyboard */,
 				FA68723820AA028000D82F25 /* ObjectDetector.mlmodel */,
@@ -172,6 +175,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6386499E26B48A5E006D6F0A /* urban-3.mp4 in Resources */,
 				FAD500A91ED668B60074D713 /* LaunchScreen.storyboard in Resources */,
 				FAD500A61ED668B60074D713 /* Assets.xcassets in Resources */,
 				FAD500A41ED668B60074D713 /* Main.storyboard in Resources */,

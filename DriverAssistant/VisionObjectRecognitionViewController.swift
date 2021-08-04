@@ -170,6 +170,7 @@ class VisionObjectRecognitionViewController: ViewController, ObservableObject {
         // Red          -> Egg
         // Green        -> Coffee
         // Stop sign    -> Banana
+        
         if label == "Egg" {
             boxLayer.borderColor = CGColor.init(red: 1.0, green: 1.0, blue: 0.0, alpha: 0.5)
             trafficLightRed.isHidden = false
