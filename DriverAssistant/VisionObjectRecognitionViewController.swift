@@ -23,7 +23,7 @@ class VisionObjectRecognitionViewController: ViewController, ObservableObject {
         // Setup Vision parts
         let error: NSError! = nil
         
-        guard let modelURL = Bundle.main.url(forResource: "ObjectDetector", withExtension: "mlmodelc") else {
+        guard let modelURL = Bundle.main.url(forResource: "yolov5sTrafficTest", withExtension: "mlmodelc") else {
             return NSError(domain: "VisionObjectRecognitionViewController", code: -1, userInfo: [NSLocalizedDescriptionKey: "Model file not found!"])
         }
         
@@ -37,6 +37,7 @@ class VisionObjectRecognitionViewController: ViewController, ObservableObject {
                     }
                 })
             })
+          
             self.requests = [objectRecognition]
         } catch let error as NSError {
             print("Model loading failed: \(error)")

@@ -10,7 +10,7 @@
 		6301F9A626A039600001E40E /* WebViewContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6301F9A526A039600001E40E /* WebViewContainer.swift */; };
 		6301F9A826A039F90001E40E /* WebView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6301F9A726A039F90001E40E /* WebView.swift */; };
 		63683F5C269F133B00ACFD2B /* NavigationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63683F5B269F133B00ACFD2B /* NavigationView.swift */; };
-		636F5F3726AAC89A00BDF3D6 /* yolov5s.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 636F5F3626AAC89A00BDF3D6 /* yolov5s.mlmodel */; };
+		6374744126E3EA630058EEB8 /* yolov5sTrafficTest.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 6374744026E3EA630058EEB8 /* yolov5sTrafficTest.mlmodel */; };
 		63832B7D269A246C00590A9F /* DisplayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63832B7C269A246C00590A9F /* DisplayView.swift */; };
 		63832B7F269A249000590A9F /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63832B7E269A249000590A9F /* SettingsView.swift */; };
 		63832B81269A24BF00590A9F /* LibraryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63832B80269A24BF00590A9F /* LibraryView.swift */; };
@@ -28,7 +28,7 @@
 		6301F9A526A039600001E40E /* WebViewContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebViewContainer.swift; sourceTree = "<group>"; };
 		6301F9A726A039F90001E40E /* WebView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebView.swift; sourceTree = "<group>"; };
 		63683F5B269F133B00ACFD2B /* NavigationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationView.swift; sourceTree = "<group>"; };
-		636F5F3626AAC89A00BDF3D6 /* yolov5s.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = yolov5s.mlmodel; sourceTree = "<group>"; };
+		6374744026E3EA630058EEB8 /* yolov5sTrafficTest.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = yolov5sTrafficTest.mlmodel; sourceTree = "<group>"; };
 		63832B7C269A246C00590A9F /* DisplayView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DisplayView.swift; sourceTree = "<group>"; };
 		63832B7E269A249000590A9F /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 		63832B80269A24BF00590A9F /* LibraryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LibraryView.swift; sourceTree = "<group>"; };
@@ -105,8 +105,8 @@
 				FAD500A21ED668B60074D713 /* Main.storyboard */,
 				FAD500A51ED668B60074D713 /* Assets.xcassets */,
 				FAD500A71ED668B60074D713 /* LaunchScreen.storyboard */,
+				6374744026E3EA630058EEB8 /* yolov5sTrafficTest.mlmodel */,
 				FA68723820AA028000D82F25 /* ObjectDetector.mlmodel */,
-				636F5F3626AAC89A00BDF3D6 /* yolov5s.mlmodel */,
 				FAD500AA1ED668B60074D713 /* Info.plist */,
 			);
 			path = DriverAssistant;
@@ -187,10 +187,10 @@
 			files = (
 				63832B7F269A249000590A9F /* SettingsView.swift in Sources */,
 				6301F9A626A039600001E40E /* WebViewContainer.swift in Sources */,
+				6374744126E3EA630058EEB8 /* yolov5sTrafficTest.mlmodel in Sources */,
 				FAB417F62099308400494E9C /* VisionObjectRecognitionViewController.swift in Sources */,
 				FAD500A11ED668B60074D713 /* ViewController.swift in Sources */,
 				63832B81269A24BF00590A9F /* LibraryView.swift in Sources */,
-				636F5F3726AAC89A00BDF3D6 /* yolov5s.mlmodel in Sources */,
 				63832B7D269A246C00590A9F /* DisplayView.swift in Sources */,
 				63832B84269A253800590A9F /* LocationViewController.swift in Sources */,
 				63683F5C269F133B00ACFD2B /* NavigationView.swift in Sources */,
