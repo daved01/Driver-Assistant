@@ -16,7 +16,7 @@ struct DisplayView: View {
     var body: some View {
             HStack {
                 Spacer()
-                if self.showSpeed == false {
+                if self.showSpeed == true {
                     VStack {
                         Text("\(Int(locationViewModel.currentSpeed))")
                         .font(.system(size: 82.0))
