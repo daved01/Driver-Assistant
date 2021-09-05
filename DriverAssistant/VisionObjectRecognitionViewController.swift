@@ -35,7 +35,6 @@ class VisionObjectRecognitionViewController: ViewController, ObservableObject {
             visionModel.inputImageFeatureName = "confidenceThreshold"
             visionModel.inputImageFeatureName = "image"
             
-            
             let objectRecognition = VNCoreMLRequest(model: visionModel, completionHandler: { (request, error) in
                 DispatchQueue.main.async(execute: {
                     
@@ -83,7 +82,6 @@ class VisionObjectRecognitionViewController: ViewController, ObservableObject {
             // It is a CGRect.
             let objectBounds = VNImageRectForNormalizedRect(objectObservation.boundingBox, Int(bufferSize.width), Int(bufferSize.height))
             
-            
             // Visualize results if selected in settings
             let visualizeDetections = UserDefaults.standard.bool(forKey: "visualizeDetections")
             if visualizeDetections == true {
@@ -102,6 +100,7 @@ class VisionObjectRecognitionViewController: ViewController, ObservableObject {
             return
         }
         
+        // Set orientation of devive.
         let exifOrientation = exifOrientationFromDeviceOrientation()
         
         let imageRequestHandler = VNImageRequestHandler(cvPixelBuffer: pixelBuffer, orientation: exifOrientation, options: [:])
@@ -139,8 +138,8 @@ class VisionObjectRecognitionViewController: ViewController, ObservableObject {
         let bounds = rootLayer.bounds
         var scale: CGFloat
         
-        let xScale: CGFloat = bounds.size.width / bufferSize.height
-        let yScale: CGFloat = bounds.size.height / bufferSize.width
+        let xScale: CGFloat = bounds.size.width / bufferSize.width
+        let yScale: CGFloat = bounds.size.height / bufferSize.height
         
         scale = fmax(xScale, yScale)
         if scale.isInfinite {
@@ -149,11 +148,11 @@ class VisionObjectRecognitionViewController: ViewController, ObservableObject {
         CATransaction.begin()
         CATransaction.setValue(kCFBooleanTrue, forKey: kCATransactionDisableActions)
         // Rotate the layer into screen orientation and scale and mirror
-        detectionOverlay.setAffineTransform(CGAffineTransform(rotationAngle: CGFloat(.pi / 2.0)).scaledBy(x: scale, y: -scale))
+        // Change the quotient to 1.0 for portrait
+        detectionOverlay.setAffineTransform(CGAffineTransform(rotationAngle: CGFloat(0.0)).scaledBy(x: scale, y: -scale)) // .pi / 2.0
         // Center the layer
         detectionOverlay.position = CGPoint(x: bounds.midX, y: bounds.midY)
         CATransaction.commit()
-        
     }
     
     func drawLabels(_ bounds: CGRect, identifier: String, confidence: VNConfidence) -> CATextLayer {

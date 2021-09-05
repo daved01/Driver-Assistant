@@ -77,8 +77,8 @@ class ViewController: UIViewController, AVCaptureVideoDataOutputSampleBufferDele
             return
         }
         
+        // Begins list of configurations. They are applied after commitConfiguration.
         session.beginConfiguration()
-        //session.sessionPreset = .vga640x480 // Model image size is smaller.
         
         // Add a video input
         guard session.canAddInput(deviceInput) else {
@@ -100,21 +100,27 @@ class ViewController: UIViewController, AVCaptureVideoDataOutputSampleBufferDele
         }
         let captureConnection = videoDataOutput.connection(with: .video)
         
+        // Rotate input image to portrait orientation
+        captureConnection?.videoOrientation = .portrait
+        
         // Always process the frames
         captureConnection?.isEnabled = true
         do {
             try  videoDevice!.lockForConfiguration()
             let dimensions = CMVideoFormatDescriptionGetDimensions((videoDevice?.activeFormat.formatDescription)!)
-            bufferSize.width = CGFloat(dimensions.width)
-            bufferSize.height = CGFloat(dimensions.height)
+            
+            // Swap height and width because of input video orientation
+            bufferSize.width = CGFloat(dimensions.height)
+            bufferSize.height = CGFloat(dimensions.width)
             videoDevice!.unlockForConfiguration()
         } catch {
             print(error)
         }
+        // Applies the configurations
         session.commitConfiguration()
         previewLayer = AVCaptureVideoPreviewLayer(session: session)
+        previewLayer.videoGravity = AVLayerVideoGravity.resizeAspectFill // Fill screen
         
-        previewLayer.videoGravity = AVLayerVideoGravity.resizeAspectFill
         rootLayer = previewView.layer
         previewLayer.frame = rootLayer.bounds
         rootLayer.addSublayer(previewLayer)
@@ -142,18 +148,19 @@ class ViewController: UIViewController, AVCaptureVideoDataOutputSampleBufferDele
     
     func captureOutput(_ captureOutput: AVCaptureOutput, didDrop didDropSampleBuffer: CMSampleBuffer, from connection: AVCaptureConnection) {
     }
-    
+
     public func exifOrientationFromDeviceOrientation() -> CGImagePropertyOrientation {
         let curDeviceOrientation = UIDevice.current.orientation
+        
         let exifOrientation: CGImagePropertyOrientation
         
         switch curDeviceOrientation {
         case UIDeviceOrientation.portraitUpsideDown:  // Device oriented vertically, home button on the top
             exifOrientation = .left
         case UIDeviceOrientation.landscapeLeft:       // Device oriented horizontally, home button on the right
-            exifOrientation = .upMirrored
+            exifOrientation = .up
         case UIDeviceOrientation.landscapeRight:      // Device oriented horizontally, home button on the left
-            exifOrientation = .down
+            exifOrientation = .upMirrored
         case UIDeviceOrientation.portrait:            // Device oriented vertically, home button on the bottom
             exifOrientation = .up
         default:
