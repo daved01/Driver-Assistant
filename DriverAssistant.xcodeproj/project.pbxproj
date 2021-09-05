@@ -15,7 +15,6 @@
 		63832B7F269A249000590A9F /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63832B7E269A249000590A9F /* SettingsView.swift */; };
 		63832B81269A24BF00590A9F /* LibraryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63832B80269A24BF00590A9F /* LibraryView.swift */; };
 		63832B84269A253800590A9F /* LocationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63832B83269A253800590A9F /* LocationViewController.swift */; };
-		FA68723920AA028000D82F25 /* ObjectDetector.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = FA68723820AA028000D82F25 /* ObjectDetector.mlmodel */; };
 		FAB417F62099308400494E9C /* VisionObjectRecognitionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAB417F52099308400494E9C /* VisionObjectRecognitionViewController.swift */; };
 		FAD5009F1ED668B60074D713 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAD5009E1ED668B60074D713 /* AppDelegate.swift */; };
 		FAD500A11ED668B60074D713 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAD500A01ED668B60074D713 /* ViewController.swift */; };
@@ -34,7 +33,6 @@
 		63832B80269A24BF00590A9F /* LibraryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LibraryView.swift; sourceTree = "<group>"; };
 		63832B83269A253800590A9F /* LocationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationViewController.swift; sourceTree = "<group>"; };
 		7984D3D3A63BDFC4A07FEF8F /* SampleCode.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; name = SampleCode.xcconfig; path = Configuration/SampleCode.xcconfig; sourceTree = "<group>"; };
-		FA68723820AA028000D82F25 /* ObjectDetector.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = ObjectDetector.mlmodel; sourceTree = "<group>"; };
 		FAB417F52099308400494E9C /* VisionObjectRecognitionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VisionObjectRecognitionViewController.swift; sourceTree = "<group>"; };
 		FAD5009B1ED668B60074D713 /* DriverAssistant.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DriverAssistant.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FAD5009E1ED668B60074D713 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -106,7 +104,6 @@
 				FAD500A51ED668B60074D713 /* Assets.xcassets */,
 				FAD500A71ED668B60074D713 /* LaunchScreen.storyboard */,
 				6374744026E3EA630058EEB8 /* yolov5sTrafficTest.mlmodel */,
-				FA68723820AA028000D82F25 /* ObjectDetector.mlmodel */,
 				FAD500AA1ED668B60074D713 /* Info.plist */,
 			);
 			path = DriverAssistant;
@@ -195,7 +192,6 @@
 				63832B84269A253800590A9F /* LocationViewController.swift in Sources */,
 				63683F5C269F133B00ACFD2B /* NavigationView.swift in Sources */,
 				FAD5009F1ED668B60074D713 /* AppDelegate.swift in Sources */,
-				FA68723920AA028000D82F25 /* ObjectDetector.mlmodel in Sources */,
 				6301F9A826A039F90001E40E /* WebView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
