@@ -179,34 +179,43 @@ class VisionObjectRecognitionViewController: ViewController, ObservableObject {
         boxLayer.bounds = objectBounds
         boxLayer.position = CGPoint(x: objectBounds.midX, y: objectBounds.midY)
 
-        //boxLayer.bounds = CGRect(x: objectBounds.midX, y: objectBounds.midY, width: 40.0, height: 40.0)
-        boxLayer.cornerRadius = 10.0
-        
+        boxLayer.cornerRadius = 6.0
+        boxLayer.borderWidth = 8.0
         // Box colour depending on label
         // Hierachy: Red > Green > stop sign
-        if label == "car" {
-            boxLayer.borderColor = CGColor.init(red: 1.0, green: 1.0, blue: 0.0, alpha: 0.5)
+        if label == "traffic_light_red" {
+            boxLayer.borderColor = CGColor.init(red: 1.0, green: 0.0, blue: 0.0, alpha: 1.0)
             trafficLightRed.isHidden = false
             trafficLightGreen.isHidden = true
             stopSign.isHidden = true
+            boxLayer.borderWidth = 14.0
         }
-        else if label == "person" {
-            boxLayer.borderColor = CGColor.init(red: 0.0, green: 1.0, blue: 0.0, alpha: 0.5)
+        else if label == "traffic_light_green" {
+            boxLayer.borderColor = CGColor.init(red: 0.0, green: 1.0, blue: 0.0, alpha: 1.0)
             trafficLightRed.isHidden = true
             trafficLightGreen.isHidden = false
             stopSign.isHidden = true
+            boxLayer.borderWidth = 12.0
         }
         else if label == "traffic_light_na" {
-            boxLayer.borderColor = CGColor.init(red: 0.0, green: 1.0, blue: 0.0, alpha: 0.5)
+            boxLayer.borderColor = CGColor.init(red: 1.0, green: 1.0, blue: 0.0, alpha: 1.0)
+            trafficLightRed.isHidden = true
+            trafficLightGreen.isHidden = true
+            stopSign.isHidden = true
+            boxLayer.borderWidth = 12.0
+        }
+        else if label == "stop sign" {
+            boxLayer.borderColor = CGColor.init(red: 1.0, green: 0.0, blue: 0.0, alpha: 1.0)
             trafficLightRed.isHidden = true
             trafficLightGreen.isHidden = true
             stopSign.isHidden = false
+            boxLayer.borderWidth = 14.0
         }
         else {
-            boxLayer.borderColor = CGColor.init(red: 0.0, green: 1.0, blue: 0.0, alpha: 0.5)
+            boxLayer.borderColor = CGColor.init(red: 0.0, green: 0.0, blue: 1.0, alpha: 1.0)
         }
 
-        boxLayer.borderWidth = 7.0
+        
         return boxLayer
     }
     
