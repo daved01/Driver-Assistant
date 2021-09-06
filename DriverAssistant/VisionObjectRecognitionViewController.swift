@@ -14,6 +14,7 @@ class VisionObjectRecognitionViewController: ViewController, ObservableObject {
     @Published var showStopSign: Bool = false
     private var detectionOverlay: CALayer! = nil
     private var firstLabel: String = ""
+    private var firstConfidence: Float = 0.0
     
     // Vision parts
     private var requests = [VNRequest]()
@@ -62,18 +63,17 @@ class VisionObjectRecognitionViewController: ViewController, ObservableObject {
         trafficLightRed.isHidden = true
         trafficLightGreen.isHidden = true
         stopSign.isHidden = true
-        
-        
+                
         for observation in results where observation is VNRecognizedObjectObservation {
             guard let objectObservation = observation as? VNRecognizedObjectObservation else {
                 continue
             }
             
             
-            
             // Select only the label with the highest confidence.
             let topLabelObservation = objectObservation.labels[0]
             firstLabel = topLabelObservation.identifier
+            firstConfidence = topLabelObservation.confidence
             
             // TODO: Scale boxes
             // bufferSize.width: 1920, bufferSize.height: 1080
@@ -84,12 +84,19 @@ class VisionObjectRecognitionViewController: ViewController, ObservableObject {
             
             // Visualize results if selected in settings
             let visualizeDetections = UserDefaults.standard.bool(forKey: "visualizeDetections")
+            let showLabels = UserDefaults.standard.bool(forKey: "showLabels")
+           
             if visualizeDetections == true {
-                let shapeLayer = self.drawBoxes(objectBounds, label: firstLabel)
-                //let textLayer = self.drawLabels(objectBounds, identifier: topLabelObservation.identifier,confidence: topLabelObservation.confidence)
-                //shapeLayer.addSublayer(textLayer)
-                detectionOverlay.addSublayer(shapeLayer)
+                let boxLayer = self.drawBoxes(objectBounds, label: firstLabel)
+                detectionOverlay.addSublayer(boxLayer)
             }
+            if showLabels == true {
+                let labelLayer = self.drawLabels(objectBounds, label: firstLabel, confidence: firstConfidence)
+                detectionOverlay.addSublayer(labelLayer)
+            }
+            
+            let iconLayer = self.showIndicators(label: firstLabel)
+            detectionOverlay.addSublayer(iconLayer)
         }
         self.updateLayerGeometry()
         CATransaction.commit()
@@ -155,23 +162,78 @@ class VisionObjectRecognitionViewController: ViewController, ObservableObject {
         CATransaction.commit()
     }
     
-    func drawLabels(_ bounds: CGRect, identifier: String, confidence: VNConfidence) -> CATextLayer {
+    func drawLabels(_ bounds: CGRect, label: String, confidence: VNConfidence) -> CATextLayer {
         let textLayer = CATextLayer()
         textLayer.name = "Object Label"
-        let formattedString = NSMutableAttributedString(string: String(format: "\(identifier)\nConfidence:  %.2f", confidence))
-        let largeFont = UIFont(name: "Helvetica", size: 24.0)!
-        formattedString.addAttributes([NSAttributedString.Key.font: largeFont], range: NSRange(location: 0, length: identifier.count))
+            
+        // Format the string
+        let font = UIFont.systemFont(ofSize: 30)
+        let colour = UIColor.white
+        let attribute = [NSAttributedString.Key.font: font, NSAttributedString.Key.foregroundColor: colour]
+        let formattedString = NSMutableAttributedString(string: String(format: "\(label) (%.2f)", confidence), attributes: attribute)
         textLayer.string = formattedString
-        textLayer.bounds = CGRect(x: 0, y: 0, width: bounds.size.height - 10, height: bounds.size.width - 10)
-        textLayer.position = CGPoint(x: bounds.midX, y: bounds.midY)
-        textLayer.shadowOpacity = 0.7
-        textLayer.shadowOffset = CGSize(width: 2, height: 2)
+        
+        // Place the labels
+        let labelHeight: CGFloat = 40.0
+        let yPosOffset: CGFloat = 18.0
+        
+        if label == "traffic_light_red" {
+            textLayer.backgroundColor = UIColor.red.cgColor
+            textLayer.bounds = CGRect(x: 0, y: 0, width: 300.0, height: labelHeight)
+            textLayer.position = CGPoint(x: bounds.minX+150.0, y: bounds.maxY+yPosOffset)
+        }
+        else if label == "traffic_light_green" {
+            textLayer.backgroundColor = UIColor.green.cgColor
+            textLayer.bounds = CGRect(x: 0, y: 0, width: 330.0, height: labelHeight)
+            textLayer.position = CGPoint(x: bounds.minX+165.0, y: bounds.maxY+yPosOffset)
+        }
+        else if label == "traffic_light_na" {
+            textLayer.backgroundColor = UIColor.yellow.cgColor
+            textLayer.bounds = CGRect(x: 0, y: 0, width: 300.0, height: labelHeight)
+            textLayer.position = CGPoint(x: bounds.minX+150.0, y: bounds.maxY+yPosOffset)
+        }
+        else if label == "stop sign" {
+            textLayer.backgroundColor = UIColor.red.cgColor
+            textLayer.bounds = CGRect(x: 0, y: 0, width: 220.0, height: labelHeight)
+            textLayer.position = CGPoint(x: bounds.minX+110.0, y: bounds.maxY+yPosOffset)
+        }
+        else {
+            textLayer.backgroundColor = UIColor.blue.cgColor
+            textLayer.bounds = CGRect(x: 0, y: 0, width: 190.0, height: labelHeight)
+            textLayer.position = CGPoint(x: bounds.minX+95.0, y: bounds.maxY+yPosOffset)
+        }
+        
         textLayer.foregroundColor = CGColor(colorSpace: CGColorSpaceCreateDeviceRGB(), components: [0.0, 0.0, 0.0, 1.0])
-        textLayer.contentsScale = 2.0 // retina rendering
-        // rotate the layer into screen orientation and scale and mirror
-        textLayer.setAffineTransform(CGAffineTransform(rotationAngle: CGFloat(.pi / 2.0)).scaledBy(x: 1.0, y: -1.0))
+        textLayer.setAffineTransform(CGAffineTransform(rotationAngle: CGFloat(0)).scaledBy(x: 1.0, y: -1.0))
         return textLayer
     }
+    
+    // Displays the icons for traffic lights and stop sign in the top right
+    func showIndicators(label: String) -> CAShapeLayer {
+        let signLayer = CAShapeLayer()
+        if label == "traffic_light_red" {
+            trafficLightRed.isHidden = false
+            trafficLightGreen.isHidden = true
+            stopSign.isHidden = true
+        }
+        else if label == "traffic_light_green" {
+            trafficLightRed.isHidden = true
+            trafficLightGreen.isHidden = false
+            stopSign.isHidden = true
+        }
+        else if label == "traffic_light_na" {
+            trafficLightRed.isHidden = true
+            trafficLightGreen.isHidden = true
+            stopSign.isHidden = true
+        }
+        else if label == "stop sign" {
+            trafficLightRed.isHidden = true
+            trafficLightGreen.isHidden = true
+            stopSign.isHidden = false
+        }
+        return signLayer
+    }
+    
     
     // Returns CAShapeLayer with box. Draws box around centre with dimensions specified in CRect: objectBounds.
     func drawBoxes(_ objectBounds: CGRect, label: String) -> CAShapeLayer {
@@ -179,45 +241,29 @@ class VisionObjectRecognitionViewController: ViewController, ObservableObject {
         boxLayer.bounds = objectBounds
         boxLayer.position = CGPoint(x: objectBounds.midX, y: objectBounds.midY)
 
-        boxLayer.cornerRadius = 6.0
-        boxLayer.borderWidth = 8.0
+        boxLayer.cornerRadius = 4.0
+        boxLayer.borderWidth = 6.0
         // Box colour depending on label
         // Hierachy: Red > Green > stop sign
         if label == "traffic_light_red" {
             boxLayer.borderColor = CGColor.init(red: 1.0, green: 0.0, blue: 0.0, alpha: 1.0)
-            trafficLightRed.isHidden = false
-            trafficLightGreen.isHidden = true
-            stopSign.isHidden = true
-            boxLayer.borderWidth = 14.0
+            boxLayer.borderWidth = 12.0
         }
         else if label == "traffic_light_green" {
             boxLayer.borderColor = CGColor.init(red: 0.0, green: 1.0, blue: 0.0, alpha: 1.0)
-            trafficLightRed.isHidden = true
-            trafficLightGreen.isHidden = false
-            stopSign.isHidden = true
-            boxLayer.borderWidth = 12.0
+            boxLayer.borderWidth = 10.0
         }
         else if label == "traffic_light_na" {
             boxLayer.borderColor = CGColor.init(red: 1.0, green: 1.0, blue: 0.0, alpha: 1.0)
-            trafficLightRed.isHidden = true
-            trafficLightGreen.isHidden = true
-            stopSign.isHidden = true
-            boxLayer.borderWidth = 12.0
+            boxLayer.borderWidth = 10.0
         }
         else if label == "stop sign" {
             boxLayer.borderColor = CGColor.init(red: 1.0, green: 0.0, blue: 0.0, alpha: 1.0)
-            trafficLightRed.isHidden = true
-            trafficLightGreen.isHidden = true
-            stopSign.isHidden = false
-            boxLayer.borderWidth = 14.0
+            boxLayer.borderWidth = 12.0
         }
         else {
             boxLayer.borderColor = CGColor.init(red: 0.0, green: 0.0, blue: 1.0, alpha: 1.0)
         }
-
-        
         return boxLayer
     }
-    
 }
-
