@@ -69,7 +69,6 @@ class VisionObjectRecognitionViewController: ViewController, ObservableObject {
                 continue
             }
             
-            
             // Select only the label with the highest confidence.
             let topLabelObservation = objectObservation.labels[0]
             firstLabel = topLabelObservation.identifier
@@ -133,10 +132,7 @@ class VisionObjectRecognitionViewController: ViewController, ObservableObject {
     func setupLayers() {
         detectionOverlay = CALayer() // container layer that has all the renderings of the observations
         detectionOverlay.name = "DetectionOverlay"
-        detectionOverlay.bounds = CGRect(x: 0.0,
-                                         y: 0.0,
-                                         width: bufferSize.width,
-                                         height: bufferSize.height)
+        detectionOverlay.bounds = CGRect(x: 0.0, y: 0.0, width: bufferSize.width, height: bufferSize.height)
         detectionOverlay.position = CGPoint(x: rootLayer.bounds.midX, y: rootLayer.bounds.midY)
         rootLayer.addSublayer(detectionOverlay)
     }
@@ -156,8 +152,8 @@ class VisionObjectRecognitionViewController: ViewController, ObservableObject {
         CATransaction.setValue(kCFBooleanTrue, forKey: kCATransactionDisableActions)
         // Rotate the layer into screen orientation and scale and mirror
         // Change the quotient to 1.0 for portrait
-        detectionOverlay.setAffineTransform(CGAffineTransform(rotationAngle: CGFloat(0.0)).scaledBy(x: scale, y: -scale)) // .pi / 2.0
-        // Center the layer
+        detectionOverlay.setAffineTransform(CGAffineTransform(rotationAngle: CGFloat(0.0)).scaledBy(x: scale, y: -scale))
+        // Centre layer
         detectionOverlay.position = CGPoint(x: bounds.midX, y: bounds.midY)
         CATransaction.commit()
     }
