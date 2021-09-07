@@ -161,41 +161,42 @@ class VisionObjectRecognitionViewController: ViewController, ObservableObject {
     func drawLabels(_ bounds: CGRect, label: String, confidence: VNConfidence) -> CATextLayer {
         let textLayer = CATextLayer()
         textLayer.name = "Object Label"
-            
+        
         // Format the string
         let font = UIFont.systemFont(ofSize: 30)
-        let colour = UIColor.white
-        let attribute = [NSAttributedString.Key.font: font, NSAttributedString.Key.foregroundColor: colour]
+        let colour = Constants.TextColours.light
+        let attribute = [NSAttributedString.Key.font: font, NSAttributedString.Key.foregroundColor: colour] as [NSAttributedString.Key : Any]
         let formattedString = NSMutableAttributedString(string: String(format: "\(label) (%.2f)", confidence), attributes: attribute)
         textLayer.string = formattedString
-        
+                
         // Place the labels
         let labelHeight: CGFloat = 40.0
         let yPosOffset: CGFloat = 18.0
         
         if label == "traffic_light_red" {
-            textLayer.backgroundColor = UIColor.red.cgColor
+            textLayer.backgroundColor = Constants.BoxColours.trafficRed
             textLayer.bounds = CGRect(x: 0, y: 0, width: 300.0, height: labelHeight)
             textLayer.position = CGPoint(x: bounds.minX+150.0, y: bounds.maxY+yPosOffset)
         }
         else if label == "traffic_light_green" {
-            textLayer.backgroundColor = UIColor.green.cgColor
+            textLayer.backgroundColor = Constants.BoxColours.trafficGreen
             textLayer.bounds = CGRect(x: 0, y: 0, width: 330.0, height: labelHeight)
             textLayer.position = CGPoint(x: bounds.minX+165.0, y: bounds.maxY+yPosOffset)
         }
         else if label == "traffic_light_na" {
-            textLayer.backgroundColor = UIColor.yellow.cgColor
+            textLayer.backgroundColor = Constants.BoxColours.trafficNa
             textLayer.bounds = CGRect(x: 0, y: 0, width: 300.0, height: labelHeight)
             textLayer.position = CGPoint(x: bounds.minX+150.0, y: bounds.maxY+yPosOffset)
         }
         else if label == "stop sign" {
-            textLayer.backgroundColor = UIColor.red.cgColor
+            textLayer.backgroundColor = Constants.BoxColours.trafficRed
             textLayer.bounds = CGRect(x: 0, y: 0, width: 220.0, height: labelHeight)
             textLayer.position = CGPoint(x: bounds.minX+110.0, y: bounds.maxY+yPosOffset)
         }
         else {
-            textLayer.backgroundColor = UIColor.blue.cgColor
-            textLayer.bounds = CGRect(x: 0, y: 0, width: 190.0, height: labelHeight)
+            textLayer.backgroundColor = Constants.BoxColours.misc
+            let boxWidth: CGFloat = CGFloat(label.count * 40) // TODO: Find better scaling factor
+            textLayer.bounds = CGRect(x: 0, y: 0, width: boxWidth, height: labelHeight)
             textLayer.position = CGPoint(x: bounds.minX+95.0, y: bounds.maxY+yPosOffset)
         }
         
@@ -242,23 +243,23 @@ class VisionObjectRecognitionViewController: ViewController, ObservableObject {
         // Box colour depending on label
         // Hierachy: Red > Green > stop sign
         if label == "traffic_light_red" {
-            boxLayer.borderColor = CGColor.init(red: 1.0, green: 0.0, blue: 0.0, alpha: 1.0)
+            boxLayer.borderColor = Constants.BoxColours.trafficRed
             boxLayer.borderWidth = 12.0
         }
         else if label == "traffic_light_green" {
-            boxLayer.borderColor = CGColor.init(red: 0.0, green: 1.0, blue: 0.0, alpha: 1.0)
+            boxLayer.borderColor = Constants.BoxColours.trafficGreen
             boxLayer.borderWidth = 10.0
         }
         else if label == "traffic_light_na" {
-            boxLayer.borderColor = CGColor.init(red: 1.0, green: 1.0, blue: 0.0, alpha: 1.0)
+            boxLayer.borderColor = Constants.BoxColours.trafficNa
             boxLayer.borderWidth = 10.0
         }
         else if label == "stop sign" {
-            boxLayer.borderColor = CGColor.init(red: 1.0, green: 0.0, blue: 0.0, alpha: 1.0)
+            boxLayer.borderColor = Constants.BoxColours.trafficRed
             boxLayer.borderWidth = 12.0
         }
         else {
-            boxLayer.borderColor = CGColor.init(red: 0.0, green: 0.0, blue: 1.0, alpha: 1.0)
+            boxLayer.borderColor = Constants.BoxColours.misc
         }
         return boxLayer
     }
