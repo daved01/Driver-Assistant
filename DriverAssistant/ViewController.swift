@@ -11,7 +11,6 @@ import Vision
 import SwiftUI
 
 class ViewController: UIViewController, AVCaptureVideoDataOutputSampleBufferDelegate {
-    
     let navigationView = UIHostingController(rootView: NavigationView())
     let displayView = UIHostingController(rootView: DisplayView())
     
@@ -32,6 +31,7 @@ class ViewController: UIViewController, AVCaptureVideoDataOutputSampleBufferDele
     }
     
     override func viewDidLoad() {
+        UIApplication.shared.isIdleTimerDisabled = true // Prevents the device from going to sleep
         super.viewDidLoad()
         
         setupAVCapture() // Preview stuff
