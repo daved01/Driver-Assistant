@@ -33,10 +33,9 @@ struct Settings: View {
                         .font(.body)
                     }
                 }
-                
                 Text("Detector settings")
                     .font(.title)
-                    .padding(0.5)
+                    .padding(EdgeInsets(top: 40, leading: 0, bottom: 0, trailing: 0))
                 HStack {
                     Toggle(isOn: $visualizeDetections) {
                         Text("Show bounding boxes")
@@ -49,7 +48,6 @@ struct Settings: View {
                         .font(.body)
                     }
                 }
-                
                 VStack {
                     Slider(value: $iouThreshold, in: 0...1)
                     Text("IoU threshold")
@@ -60,18 +58,17 @@ struct Settings: View {
                         Text("Confidence threshold")
                         .font(.body)
                 }
-                
+    
                 Text("Further")
                     .font(.title)
-                    .padding(0.5)
+                    .padding(EdgeInsets(top: 40, leading: 0, bottom: 0, trailing: 0))
                 NavigationLink(destination: WebView()) {
                 Text("Learn how detection works")
                     .font(.body)
                 }
-                
-
             }
-
+            Spacer()
+            
         }
         .navigationBarTitle("Settings")
     }
