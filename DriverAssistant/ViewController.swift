@@ -27,11 +27,13 @@ class ViewController: UIViewController, AVCaptureVideoDataOutputSampleBufferDele
     private let videoDataOutput = AVCaptureVideoDataOutput()
     private let videoDataOutputQueue = DispatchQueue(label: "VideoDataOutput", qos: .userInitiated, attributes: [], autoreleaseFrequency: .workItem)
     
+    
     func captureOutput(_ output: AVCaptureOutput, didOutput sampleBuffer: CMSampleBuffer, from connection: AVCaptureConnection) {
     }
     
+    
     override func viewDidLoad() {
-        UIApplication.shared.isIdleTimerDisabled = true // Prevents the device from going to sleep
+        UIApplication.shared.isIdleTimerDisabled = true // Prevent the device from going to sleep
         super.viewDidLoad()
         
         setupAVCapture() // Preview stuff
@@ -51,6 +53,7 @@ class ViewController: UIViewController, AVCaptureVideoDataOutputSampleBufferDele
         navigationView.view.rightAnchor.constraint(equalTo: view.rightAnchor).isActive = true
     }
     
+    
     fileprivate func setupConstraintsDisplay() {
         displayView.view.backgroundColor = UIColor.clear // Needed to not hide other layers
         displayView.view.translatesAutoresizingMaskIntoConstraints = false
@@ -60,10 +63,11 @@ class ViewController: UIViewController, AVCaptureVideoDataOutputSampleBufferDele
         displayView.view.rightAnchor.constraint(equalTo: view.rightAnchor).isActive = true
     }
     
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
+    
     
     func setupAVCapture() {
         var deviceInput: AVCaptureDeviceInput!
@@ -93,7 +97,8 @@ class ViewController: UIViewController, AVCaptureVideoDataOutputSampleBufferDele
             videoDataOutput.alwaysDiscardsLateVideoFrames = true
             videoDataOutput.videoSettings = [kCVPixelBufferPixelFormatTypeKey as String: Int(kCVPixelFormatType_420YpCbCr8BiPlanarFullRange)]
             videoDataOutput.setSampleBufferDelegate(self, queue: videoDataOutputQueue)
-        } else {
+        }
+        else {
             print("Could not add video data output to the session")
             session.commitConfiguration()
             return
@@ -116,7 +121,8 @@ class ViewController: UIViewController, AVCaptureVideoDataOutputSampleBufferDele
         } catch {
             print(error)
         }
-        // Applies the configurations
+        
+        // Apply the configurations
         session.commitConfiguration()
         previewLayer = AVCaptureVideoPreviewLayer(session: session)
         previewLayer.videoGravity = AVLayerVideoGravity.resizeAspectFill // Fill screen
@@ -125,7 +131,7 @@ class ViewController: UIViewController, AVCaptureVideoDataOutputSampleBufferDele
         previewLayer.frame = rootLayer.bounds
         rootLayer.addSublayer(previewLayer)
         
-        // Shows the current speed at the top of the screen
+        // Show the current speed at the top of the screen
         addChild(displayView)
         view.addSubview(displayView.view)
         setupConstraintsDisplay()
@@ -136,9 +142,11 @@ class ViewController: UIViewController, AVCaptureVideoDataOutputSampleBufferDele
         setupConstraints()
     }
     
+    
     func startCaptureSession() {
         session.startRunning()
     }
+    
     
     // Clean up capture setup
     func teardownAVCapture() {
@@ -149,6 +157,7 @@ class ViewController: UIViewController, AVCaptureVideoDataOutputSampleBufferDele
     func captureOutput(_ captureOutput: AVCaptureOutput, didDrop didDropSampleBuffer: CMSampleBuffer, from connection: AVCaptureConnection) {
     }
 
+    
     public func exifOrientationFromDeviceOrientation() -> CGImagePropertyOrientation {
         let curDeviceOrientation = UIDevice.current.orientation
         

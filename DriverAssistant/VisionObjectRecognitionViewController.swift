@@ -15,9 +15,8 @@ class VisionObjectRecognitionViewController: ViewController, ObservableObject {
     private var detectionOverlay: CALayer! = nil
     private var firstLabel: String = ""
     private var firstConfidence: Float = 0.0
-    
-    // Vision parts
     private var requests = [VNRequest]()
+    
     
     @discardableResult
     func setupVision() -> NSError? {
@@ -38,14 +37,12 @@ class VisionObjectRecognitionViewController: ViewController, ObservableObject {
             
             let objectRecognition = VNCoreMLRequest(model: visionModel, completionHandler: { (request, error) in
                 DispatchQueue.main.async(execute: {
-                    
                     if let results = request.results {
                         self.drawVisionRequestResults(results)
                     }
                 })
             })
             //objectRecognition.imageCropAndScaleOption = .scaleFill // Aspect ratio of input.
-            
             self.requests = [objectRecognition]
         } catch let error as NSError {
             print("Model loading failed: \(error)")
@@ -54,10 +51,11 @@ class VisionObjectRecognitionViewController: ViewController, ObservableObject {
         return error
     }
     
+    
     func drawVisionRequestResults(_ results: [Any]) {
         CATransaction.begin()
         CATransaction.setValue(kCFBooleanTrue, forKey: kCATransactionDisableActions)
-        detectionOverlay.sublayers = nil // remove all the old recognized objects
+        detectionOverlay.sublayers = nil // Remove all the old recognized objects
         
         // Remove
         trafficLightRed.isHidden = true
@@ -101,6 +99,7 @@ class VisionObjectRecognitionViewController: ViewController, ObservableObject {
         CATransaction.commit()
     }
     
+    
     override func captureOutput(_ output: AVCaptureOutput, didOutput sampleBuffer: CMSampleBuffer, from connection: AVCaptureConnection) {
         guard let pixelBuffer = CMSampleBufferGetImageBuffer(sampleBuffer) else {
             return
@@ -108,7 +107,6 @@ class VisionObjectRecognitionViewController: ViewController, ObservableObject {
         
         // Set orientation of devive.
         let exifOrientation = exifOrientationFromDeviceOrientation()
-        
         let imageRequestHandler = VNImageRequestHandler(cvPixelBuffer: pixelBuffer, orientation: exifOrientation, options: [:])
         do {
             try imageRequestHandler.perform(self.requests)
@@ -116,6 +114,7 @@ class VisionObjectRecognitionViewController: ViewController, ObservableObject {
             print(error)
         }
     }
+    
     
     override func setupAVCapture() {
         super.setupAVCapture()
@@ -129,6 +128,7 @@ class VisionObjectRecognitionViewController: ViewController, ObservableObject {
         startCaptureSession()
     }
     
+    
     func setupLayers() {
         detectionOverlay = CALayer() // container layer that has all the renderings of the observations
         detectionOverlay.name = "DetectionOverlay"
@@ -136,6 +136,7 @@ class VisionObjectRecognitionViewController: ViewController, ObservableObject {
         detectionOverlay.position = CGPoint(x: rootLayer.bounds.midX, y: rootLayer.bounds.midY)
         rootLayer.addSublayer(detectionOverlay)
     }
+    
     
     func updateLayerGeometry() {
         let bounds = rootLayer.bounds
@@ -157,6 +158,7 @@ class VisionObjectRecognitionViewController: ViewController, ObservableObject {
         detectionOverlay.position = CGPoint(x: bounds.midX, y: bounds.midY)
         CATransaction.commit()
     }
+    
     
     func drawLabels(_ bounds: CGRect, label: String, confidence: VNConfidence) -> CATextLayer {
         let textLayer = CATextLayer()
@@ -204,6 +206,7 @@ class VisionObjectRecognitionViewController: ViewController, ObservableObject {
         textLayer.setAffineTransform(CGAffineTransform(rotationAngle: CGFloat(0)).scaledBy(x: 1.0, y: -1.0))
         return textLayer
     }
+    
     
     // Displays the icons for traffic lights and stop sign in the top right
     func showIndicators(label: String) -> CAShapeLayer {
