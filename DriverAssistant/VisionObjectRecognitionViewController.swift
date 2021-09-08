@@ -166,41 +166,40 @@ class VisionObjectRecognitionViewController: ViewController, ObservableObject {
         
         // Format the string
         let font = UIFont.systemFont(ofSize: 30)
-        let colour = Constants.TextColours.light
-        let attribute = [NSAttributedString.Key.font: font, NSAttributedString.Key.foregroundColor: colour] as [NSAttributedString.Key : Any]
-        let formattedString = NSMutableAttributedString(string: String(format: "\(label) (%.2f)", confidence), attributes: attribute)
-        textLayer.string = formattedString
-                
+        var colour = Constants.TextColours.light
+        
         // Place the labels
         let labelHeight: CGFloat = 40.0
         let yPosOffset: CGFloat = 18.0
         
         if label == "traffic_light_red" {
             textLayer.backgroundColor = Constants.BoxColours.trafficRed
-            textLayer.bounds = CGRect(x: 0, y: 0, width: 300.0, height: labelHeight)
-            textLayer.position = CGPoint(x: bounds.minX+150.0, y: bounds.maxY+yPosOffset)
         }
         else if label == "traffic_light_green" {
             textLayer.backgroundColor = Constants.BoxColours.trafficGreen
-            textLayer.bounds = CGRect(x: 0, y: 0, width: 330.0, height: labelHeight)
-            textLayer.position = CGPoint(x: bounds.minX+165.0, y: bounds.maxY+yPosOffset)
+            colour = Constants.TextColours.dark
         }
         else if label == "traffic_light_na" {
             textLayer.backgroundColor = Constants.BoxColours.trafficNa
-            textLayer.bounds = CGRect(x: 0, y: 0, width: 300.0, height: labelHeight)
-            textLayer.position = CGPoint(x: bounds.minX+150.0, y: bounds.maxY+yPosOffset)
+            colour = Constants.TextColours.dark
         }
         else if label == "stop sign" {
             textLayer.backgroundColor = Constants.BoxColours.trafficRed
-            textLayer.bounds = CGRect(x: 0, y: 0, width: 220.0, height: labelHeight)
-            textLayer.position = CGPoint(x: bounds.minX+110.0, y: bounds.maxY+yPosOffset)
+        }
+        else if label == "bicycle" || label == "person" {
+            textLayer.backgroundColor = Constants.BoxColours.pedestrian
         }
         else {
             textLayer.backgroundColor = Constants.BoxColours.misc
-            let boxWidth: CGFloat = CGFloat(label.count * 40) // TODO: Find better scaling factor
-            textLayer.bounds = CGRect(x: 0, y: 0, width: boxWidth, height: labelHeight)
-            textLayer.position = CGPoint(x: bounds.minX+95.0, y: bounds.maxY+yPosOffset)
         }
+        
+        let attribute = [NSAttributedString.Key.font: font, NSAttributedString.Key.foregroundColor: colour] as [NSAttributedString.Key : Any]
+        let formattedString = NSMutableAttributedString(string: String(format: "\(label) (%.2f)", confidence), attributes: attribute)
+        textLayer.string = formattedString
+        
+        let boxWidth: CGFloat = CGFloat(formattedString.length * 13)
+        textLayer.bounds = CGRect(x: 0, y: 0, width: boxWidth, height: labelHeight)
+        textLayer.position = CGPoint(x: bounds.minX+(boxWidth/2.0), y: bounds.maxY+yPosOffset)
         
         textLayer.foregroundColor = CGColor(colorSpace: CGColorSpaceCreateDeviceRGB(), components: [0.0, 0.0, 0.0, 1.0])
         textLayer.setAffineTransform(CGAffineTransform(rotationAngle: CGFloat(0)).scaledBy(x: 1.0, y: -1.0))
@@ -245,7 +244,7 @@ class VisionObjectRecognitionViewController: ViewController, ObservableObject {
         boxLayer.borderWidth = 6.0
         // Box colour depending on label
         // Hierachy: Red > Green > stop sign
-        if label == "traffic_light_red" {
+        if label == "traffic_light_red" || label == "stop sign" {
             boxLayer.borderColor = Constants.BoxColours.trafficRed
             boxLayer.borderWidth = 12.0
         }
@@ -257,10 +256,11 @@ class VisionObjectRecognitionViewController: ViewController, ObservableObject {
             boxLayer.borderColor = Constants.BoxColours.trafficNa
             boxLayer.borderWidth = 10.0
         }
-        else if label == "stop sign" {
-            boxLayer.borderColor = Constants.BoxColours.trafficRed
-            boxLayer.borderWidth = 12.0
+        else if label == "person" || label == "bicycle" {
+            boxLayer.borderColor = Constants.BoxColours.pedestrian
+            boxLayer.borderWidth = 10.0
         }
+       
         else {
             boxLayer.borderColor = Constants.BoxColours.misc
         }
