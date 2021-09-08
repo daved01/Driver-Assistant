@@ -18,6 +18,12 @@
                     <view key="view" contentMode="scaleToFill" id="Ze5-6b-2t3">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="stop-sign" translatesAutoresizingMaskIntoConstraints="NO" id="7uK-tQ-8Gb">
+                                <rect key="frame" x="58" y="267" width="259" height="133"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                        </subviews>
                         <color key="backgroundColor" systemColor="labelColor"/>
                     </view>
                 </viewController>
@@ -27,6 +33,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="stop-sign" width="60" height="60"/>
         <systemColor name="labelColor">
             <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

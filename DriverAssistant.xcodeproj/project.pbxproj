@@ -13,7 +13,6 @@
 		6374744126E3EA630058EEB8 /* yolov5sTrafficTest.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 6374744026E3EA630058EEB8 /* yolov5sTrafficTest.mlmodel */; };
 		63832B7D269A246C00590A9F /* DisplayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63832B7C269A246C00590A9F /* DisplayView.swift */; };
 		63832B7F269A249000590A9F /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63832B7E269A249000590A9F /* SettingsView.swift */; };
-		63832B81269A24BF00590A9F /* LibraryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63832B80269A24BF00590A9F /* LibraryView.swift */; };
 		63832B84269A253800590A9F /* LocationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63832B83269A253800590A9F /* LocationViewController.swift */; };
 		63CB3CDD26E79E770015FFBD /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63CB3CDC26E79E770015FFBD /* Constants.swift */; };
 		FAB417F62099308400494E9C /* VisionObjectRecognitionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAB417F52099308400494E9C /* VisionObjectRecognitionViewController.swift */; };
@@ -31,7 +30,6 @@
 		6374744026E3EA630058EEB8 /* yolov5sTrafficTest.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = yolov5sTrafficTest.mlmodel; sourceTree = "<group>"; };
 		63832B7C269A246C00590A9F /* DisplayView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DisplayView.swift; sourceTree = "<group>"; };
 		63832B7E269A249000590A9F /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
-		63832B80269A24BF00590A9F /* LibraryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LibraryView.swift; sourceTree = "<group>"; };
 		63832B83269A253800590A9F /* LocationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationViewController.swift; sourceTree = "<group>"; };
 		63CB3CDC26E79E770015FFBD /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		7984D3D3A63BDFC4A07FEF8F /* SampleCode.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; name = SampleCode.xcconfig; path = Configuration/SampleCode.xcconfig; sourceTree = "<group>"; };
@@ -61,7 +59,6 @@
 			children = (
 				63832B7C269A246C00590A9F /* DisplayView.swift */,
 				63683F5B269F133B00ACFD2B /* NavigationView.swift */,
-				63832B80269A24BF00590A9F /* LibraryView.swift */,
 				63832B7E269A249000590A9F /* SettingsView.swift */,
 				6301F9A726A039F90001E40E /* WebView.swift */,
 				6301F9A526A039600001E40E /* WebViewContainer.swift */,
@@ -190,7 +187,6 @@
 				6374744126E3EA630058EEB8 /* yolov5sTrafficTest.mlmodel in Sources */,
 				FAB417F62099308400494E9C /* VisionObjectRecognitionViewController.swift in Sources */,
 				FAD500A11ED668B60074D713 /* ViewController.swift in Sources */,
-				63832B81269A24BF00590A9F /* LibraryView.swift in Sources */,
 				63832B7D269A246C00590A9F /* DisplayView.swift in Sources */,
 				63832B84269A253800590A9F /* LocationViewController.swift in Sources */,
 				63683F5C269F133B00ACFD2B /* NavigationView.swift in Sources */,

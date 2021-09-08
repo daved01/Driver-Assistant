@@ -12,7 +12,7 @@ import SwiftUI
 struct DisplayView: View {
     @ObservedObject var locationViewModel = LocationViewModel()
     let showSpeed = UserDefaults.standard.bool(forKey: "showSpeed")
-
+    
     var body: some View {
             HStack {
                 Spacer()
@@ -21,16 +21,15 @@ struct DisplayView: View {
                         Text("\(Int(locationViewModel.currentSpeed))")
                         .font(.system(size: 82.0))
                         .fontWeight(.regular)
-                        .foregroundColor(.white)
+                            .foregroundColor(Color(Constants.TextColours.light))
                         Text(locationViewModel.unitString)
-                        .foregroundColor(.white)
+                        .foregroundColor(Color(Constants.TextColours.light))
                         .fontWeight(.light)
                         .font(.system(size: 38.0))
                     Spacer()
                     }
                 }
                 Spacer()
-                // Icon
             }
             .navigationBarHidden(true)
     }

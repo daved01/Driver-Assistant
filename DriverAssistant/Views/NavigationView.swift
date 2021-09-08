@@ -9,7 +9,6 @@ import SwiftUI
 
 
 struct NavigationView: View {
-    let elementColour = Color(.blue)
     @State private var isHidden: Bool = false
 
     var body: some View {
@@ -20,10 +19,10 @@ struct NavigationView: View {
                     NavigationLink(destination: Settings()) {
                     VStack {
                         Image("baseline_settings_black_24pt")
-                        .foregroundColor(elementColour)
+                        .foregroundColor(Color(Constants.InterfaceColours.navigation))
                         Text("Settings")
                         .font(.caption)
-                        .foregroundColor(elementColour)
+                        .foregroundColor(Color(Constants.InterfaceColours.navigation))
                         }
                     }
                     Spacer()

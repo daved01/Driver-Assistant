@@ -22,4 +22,8 @@ struct Constants {
         static let dark = CGColor.init(red: 47.0/255.0, green: 46.0/255.0, blue: 42.0/255.0, alpha: 1.0)
     }
     
+    struct InterfaceColours {
+        static let navigation = CGColor.init(red: 47.0/255.0, green: 46.0/255.0, blue: 42.0/255.0, alpha: 1.0)
+    }
+    
 }
