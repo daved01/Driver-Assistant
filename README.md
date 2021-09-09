@@ -1,4 +1,4 @@
-# Driver Assist
+# Driver Assistant
 
 **Disclaimer:** This is an experimental app which was made to show how to use object detection in iOS. Do not rely on it in traffic, always keep your eyes on the road, and check your local regulations before using it.
 
