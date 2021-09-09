@@ -18,7 +18,7 @@ The app has the following features.
 
 By default, the app displays bounding boxes, labels, and the speed. In settings, you can enable or disable displaying any of those options.. In addition to these features, you can adjust the object detector’s IOU threshold and confidence threshold in the settings.
 
-![Placeholder settings view]()
+<center><img src="Images/settings_menu.png" alt="Settings menu" width="200"/></center>
 
 # How to use
 This app requires XCode to install. To get started, clone this repository, open the project with `DriverAssistant.xcodeproj` and build it. Then connect your iPhone and select your iPhone under "device" in XCode and install the app. Make sure you select a valid profile under Signing & Capabilities, otherwise the app won’t compile.
@@ -27,7 +27,7 @@ This app requires XCode to install. To get started, clone this repository, open 
 # Implementation details
 The following are details regarding the implementation. The figure shows the different steps and how they relate to each other.
 
-![Overview](overview.png)
+![Overview](Images/overview.png)
 
 
 ## Label data

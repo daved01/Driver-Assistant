@@ -31,13 +31,15 @@ class VisionObjectRecognitionViewController: ViewController, ObservableObject {
             let visionModel = try VNCoreMLModel(for: MLModel(contentsOf: modelURL))
             
             // Adjust iouThreshold and confidenceThreshold here.
-            visionModel.inputImageFeatureName = "iouThreshold"
-            visionModel.inputImageFeatureName = "confidenceThreshold"
-            visionModel.inputImageFeatureName = "image"
+            //visionModel.inputImageFeatureName = "iouThreshold"
+            //visionModel.inputImageFeatureName = "confidenceThreshold"
+            //visionModel.inputImageFeatureName = "image"
+            
             
             let objectRecognition = VNCoreMLRequest(model: visionModel, completionHandler: { (request, error) in
                 DispatchQueue.main.async(execute: {
                     if let results = request.results {
+                        
                         self.drawVisionRequestResults(results)
                     }
                 })
