@@ -1,4 +1,4 @@
-# Driver Assist
+# Driver Assistant
 
 **Disclaimer:** This is an experimental app which was made to show how to use object detection in iOS. Do not rely on it in traffic, always keep your eyes on the road, and check your local regulations before using it.
 
@@ -42,7 +42,7 @@ We use a yolov5s model (link to the yolo repo) which we trained for 75 epochs on
 # Using a CoreML model in the app
 This section is particularly interesting if you want to modify the app.
 
-## Exporting The YOLOv5 Model into CoreML
+## Exporting the YOLOv5 model into CoreML
 Although there is an export function provided by Glenn Jocher and the YOLOv5 team, the trace function used in it does not export many of the post-processing steps such as adjusting the coordinates to be relative to the image rather than the grid cell. Fortunately, Leon de Andrade and Dennis Post (Thank you very much) have provided a repo to export the YOLOv5 model with all of these post-processing steps [here](https://github.com/dbsystel/yolov5-coreml-tools).
 
 We have used their repo to export out model with some minor modifications. An older version of YOLOv5 (v4.0) has been provided with this repo for your convenience. The following instructions are based on the original [repo by Leon de Andrade](https://github.com/dbsystel/yolov5-coreml-tools).
