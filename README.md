@@ -9,7 +9,7 @@ A computer vision-based driver assistant which highlights important objects such
 # Overview
 When launching the app, the vision model runs and the speed is calculated with GPS sensor data. You can tap the screen to show and hide the settings button at the bottom of the screen.
 
-![Placeholder app view]()
+<center><img src="Images/app_views.png" alt="App views for detection and settings" width="400"/></center>
 
 The app has the following features.
 - Detects 14 classes of objects
@@ -18,7 +18,7 @@ The app has the following features.
 
 By default, the app displays bounding boxes, labels, and the speed. In settings, you can enable or disable displaying any of those options.. In addition to these features, you can adjust the object detector’s IOU threshold and confidence threshold in the settings.
 
-<center><img src="Images/settings_menu.png" alt="Settings menu" width="400"/></center>
+
 
 # How to use
 This app requires XCode to install. To get started, clone this repository, open the project with `DriverAssistant.xcodeproj` and build it. Then connect your iPhone and select your iPhone under "device" in XCode and install the app. Make sure you select a valid profile under Signing & Capabilities, otherwise the app won’t compile.
