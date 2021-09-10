@@ -9,7 +9,7 @@ A computer vision-based driver assistant which highlights important objects such
 # Overview
 When launching the app, the vision model runs and the speed is calculated with GPS sensor data. You can tap the screen to show and hide the settings button at the bottom of the screen.
 
-<center><img src="Images/app_views.png" alt="App views for detection and settings" width="400"/></center>
+<center><img src="Images/app_views.png" alt="App views for detection and settings" width="600"/></center>
 
 The app has the following features.
 - Detects 14 classes of objects
