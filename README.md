@@ -70,7 +70,7 @@ In the src/coreml_export/main.py folder, you may want to change some of the vari
 Then you may paste your .pt network model in the yolov5-coreml-tools folder. To finally run the export program, you may use the command
 
 ```
-$ poetry run coreml-test --model-input-path <path to .pt file>
+$ poetry run coreml-export --model-input-path <path to .pt file>
 ```
 
 And you can use the -h flag to get a list of the optional arguments for your export. The model will save your exported model in the output/models folder.
