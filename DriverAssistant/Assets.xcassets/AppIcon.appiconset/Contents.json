@@ -11,13 +11,13 @@
       "size" : "20x20"
     },
     {
-      "filename" : "iphone.png",
+      "filename" : "logo_test_58.png",
       "idiom" : "iphone",
       "scale" : "2x",
       "size" : "29x29"
     },
     {
-      "filename" : "iphone3xpng.png",
+      "filename" : "logo_test_87.png",
       "idiom" : "iphone",
       "scale" : "3x",
       "size" : "29x29"
@@ -35,13 +35,13 @@
       "size" : "40x40"
     },
     {
-      "filename" : "iphoneSpotlight3x-1.png",
+      "filename" : "logo_test_120.png",
       "idiom" : "iphone",
       "scale" : "2x",
       "size" : "60x60"
     },
     {
-      "filename" : "iphoneApp.png",
+      "filename" : "logo_test_180.png",
       "idiom" : "iphone",
       "scale" : "3x",
       "size" : "60x60"
