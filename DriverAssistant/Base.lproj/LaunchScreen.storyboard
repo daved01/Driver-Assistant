@@ -20,7 +20,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="logo-dark-transparent" translatesAutoresizingMaskIntoConstraints="NO" id="MkD-qQ-I8z">
-                                <rect key="frame" x="34" y="394" width="307" height="165"/>
+                                <rect key="frame" x="34" y="384" width="307" height="165"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                         </subviews>
