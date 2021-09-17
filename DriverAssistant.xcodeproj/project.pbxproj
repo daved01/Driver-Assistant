@@ -15,7 +15,7 @@
 		63832B7F269A249000590A9F /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63832B7E269A249000590A9F /* SettingsView.swift */; };
 		63832B84269A253800590A9F /* LocationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63832B83269A253800590A9F /* LocationViewController.swift */; };
 		63CB3CDD26E79E770015FFBD /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63CB3CDC26E79E770015FFBD /* Constants.swift */; };
-		FAB417F62099308400494E9C /* VisionObjectRecognitionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAB417F52099308400494E9C /* VisionObjectRecognitionViewController.swift */; };
+		FAB417F62099308400494E9C /* ViewControllerDetection.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAB417F52099308400494E9C /* ViewControllerDetection.swift */; };
 		FAD5009F1ED668B60074D713 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAD5009E1ED668B60074D713 /* AppDelegate.swift */; };
 		FAD500A11ED668B60074D713 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAD500A01ED668B60074D713 /* ViewController.swift */; };
 		FAD500A41ED668B60074D713 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FAD500A21ED668B60074D713 /* Main.storyboard */; };
@@ -33,7 +33,7 @@
 		63832B83269A253800590A9F /* LocationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationViewController.swift; sourceTree = "<group>"; };
 		63CB3CDC26E79E770015FFBD /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		7984D3D3A63BDFC4A07FEF8F /* SampleCode.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; name = SampleCode.xcconfig; path = Configuration/SampleCode.xcconfig; sourceTree = "<group>"; };
-		FAB417F52099308400494E9C /* VisionObjectRecognitionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VisionObjectRecognitionViewController.swift; sourceTree = "<group>"; };
+		FAB417F52099308400494E9C /* ViewControllerDetection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewControllerDetection.swift; sourceTree = "<group>"; };
 		FAD5009B1ED668B60074D713 /* DriverAssistant.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DriverAssistant.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FAD5009E1ED668B60074D713 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FAD500A01ED668B60074D713 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -98,7 +98,7 @@
 				FAD5009E1ED668B60074D713 /* AppDelegate.swift */,
 				FAD500A01ED668B60074D713 /* ViewController.swift */,
 				63CB3CDC26E79E770015FFBD /* Constants.swift */,
-				FAB417F52099308400494E9C /* VisionObjectRecognitionViewController.swift */,
+				FAB417F52099308400494E9C /* ViewControllerDetection.swift */,
 				63832B83269A253800590A9F /* LocationViewController.swift */,
 				FAD500A21ED668B60074D713 /* Main.storyboard */,
 				FAD500A51ED668B60074D713 /* Assets.xcassets */,
@@ -184,7 +184,7 @@
 			files = (
 				63832B7F269A249000590A9F /* SettingsView.swift in Sources */,
 				6301F9A626A039600001E40E /* WebViewContainer.swift in Sources */,
-				FAB417F62099308400494E9C /* VisionObjectRecognitionViewController.swift in Sources */,
+				FAB417F62099308400494E9C /* ViewControllerDetection.swift in Sources */,
 				FAD500A11ED668B60074D713 /* ViewController.swift in Sources */,
 				63832B7D269A246C00590A9F /* DisplayView.swift in Sources */,
 				6356002D26EBC86400A641D9 /* yolov5sTraffic.mlmodel in Sources */,

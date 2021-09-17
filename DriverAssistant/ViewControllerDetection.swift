@@ -1,5 +1,5 @@
 //
-//  VisionObjectRecongnitionViewController.swift
+//  ViewControllerDetection.swift
 //  DriverAssistant
 //
 //  Created by David Kirchhoff on 2021-06-21.
@@ -9,7 +9,24 @@ import UIKit
 import AVFoundation
 import Vision
 
-class VisionObjectRecognitionViewController: ViewController, ObservableObject {
+// Modifies the thresholds of the model
+class ThresholdProvider: MLFeatureProvider {
+    open var values = [
+        "iouThreshold": MLFeatureValue(double: UserDefaults.standard.double(forKey: "iouThreshold")),
+        "confidenceThreshold": MLFeatureValue(double: UserDefaults.standard.double(forKey: "confidenceThreshold"))
+        ]
+
+    var featureNames: Set<String> {
+        return Set(values.keys)
+    }
+
+    func featureValue(for featureName: String) -> MLFeatureValue? {
+        return values[featureName]
+    }
+}
+
+
+class ViewControllerDetection: ViewController, ObservableObject {
     
     @Published var showStopSign: Bool = false
     private var detectionOverlay: CALayer! = nil
@@ -24,26 +41,20 @@ class VisionObjectRecognitionViewController: ViewController, ObservableObject {
         let error: NSError! = nil
         
         guard let modelURL = Bundle.main.url(forResource: "yolov5sTraffic", withExtension: "mlmodelc") else {
-            return NSError(domain: "VisionObjectRecognitionViewController", code: -1, userInfo: [NSLocalizedDescriptionKey: "Model file not found!"])
+            return NSError(domain: "ViewControllerDetection", code: -1, userInfo: [NSLocalizedDescriptionKey: "Model file not found!"])
         }
         
         do {
             let visionModel = try VNCoreMLModel(for: MLModel(contentsOf: modelURL))
-            
-            // Adjust iouThreshold and confidenceThreshold here.
-            //visionModel.inputImageFeatureName = "iouThreshold"
-            //visionModel.inputImageFeatureName = "confidenceThreshold"
-            //visionModel.inputImageFeatureName = "image"
-            
-            
             let objectRecognition = VNCoreMLRequest(model: visionModel, completionHandler: { (request, error) in
                 DispatchQueue.main.async(execute: {
                     if let results = request.results {
-                        
+                        visionModel.featureProvider = ThresholdProvider() // Update thresholds
                         self.drawVisionRequestResults(results)
                     }
                 })
             })
+            
             //objectRecognition.imageCropAndScaleOption = .scaleFill // Aspect ratio of input.
             self.requests = [objectRecognition]
         } catch let error as NSError {
