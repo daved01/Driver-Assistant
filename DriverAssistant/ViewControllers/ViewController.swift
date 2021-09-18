@@ -11,17 +11,17 @@ import Vision
 import SwiftUI
 
 class ViewController: UIViewController, AVCaptureVideoDataOutputSampleBufferDelegate {
+    // Include SwiftUI views
     let navigationView = UIHostingController(rootView: NavigationView())
     let displayView = UIHostingController(rootView: DisplayView())
     
     @IBOutlet weak var trafficLightRed: UIImageView!
     @IBOutlet weak var trafficLightGreen: UIImageView!
     @IBOutlet weak var stopSign: UIImageView!
+    @IBOutlet weak private var previewView: UIView!
     
     var bufferSize: CGSize = .zero
     var rootLayer: CALayer! = nil
-    
-    @IBOutlet weak private var previewView: UIView!
     private let session = AVCaptureSession()
     private var previewLayer: AVCaptureVideoPreviewLayer! = nil
     private let videoDataOutput = AVCaptureVideoDataOutput()

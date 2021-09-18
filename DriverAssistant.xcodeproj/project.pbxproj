@@ -54,6 +54,26 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		63131F0E26F5E1FB003E9111 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				63832B83269A253800590A9F /* LocationViewController.swift */,
+				FAD500A01ED668B60074D713 /* ViewController.swift */,
+				FAB417F52099308400494E9C /* ViewControllerDetection.swift */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		63131F0F26F5E264003E9111 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				6301F9A526A039600001E40E /* WebViewContainer.swift */,
+				63CB3CDC26E79E770015FFBD /* Constants.swift */,
+				6356002C26EBC86400A641D9 /* yolov5sTraffic.mlmodel */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
 		63832B82269A24CC00590A9F /* Views */ = {
 			isa = PBXGroup;
 			children = (
@@ -61,7 +81,6 @@
 				63683F5B269F133B00ACFD2B /* NavigationView.swift */,
 				63832B7E269A249000590A9F /* SettingsView.swift */,
 				6301F9A726A039F90001E40E /* WebView.swift */,
-				6301F9A526A039600001E40E /* WebViewContainer.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -94,16 +113,13 @@
 		FAD5009D1ED668B60074D713 /* DriverAssistant */ = {
 			isa = PBXGroup;
 			children = (
+				63131F0F26F5E264003E9111 /* Models */,
+				63131F0E26F5E1FB003E9111 /* ViewControllers */,
 				63832B82269A24CC00590A9F /* Views */,
 				FAD5009E1ED668B60074D713 /* AppDelegate.swift */,
-				FAD500A01ED668B60074D713 /* ViewController.swift */,
-				63CB3CDC26E79E770015FFBD /* Constants.swift */,
-				FAB417F52099308400494E9C /* ViewControllerDetection.swift */,
-				63832B83269A253800590A9F /* LocationViewController.swift */,
 				FAD500A21ED668B60074D713 /* Main.storyboard */,
 				FAD500A51ED668B60074D713 /* Assets.xcassets */,
 				FAD500A71ED668B60074D713 /* LaunchScreen.storyboard */,
-				6356002C26EBC86400A641D9 /* yolov5sTraffic.mlmodel */,
 				FAD500AA1ED668B60074D713 /* Info.plist */,
 			);
 			path = DriverAssistant;
