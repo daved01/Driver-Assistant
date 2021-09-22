@@ -108,7 +108,6 @@ class ViewControllerDetection: ViewController, ObservableObject {
             let iconLayer = self.showIndicators(label: firstLabel)
             detectionOverlay.addSublayer(iconLayer)
         }
-        self.updateLayerGeometry()
         CATransaction.commit()
     }
     
@@ -118,8 +117,9 @@ class ViewControllerDetection: ViewController, ObservableObject {
             return
         }
         
-        // Set orientation of devive.
-        let exifOrientation = exifOrientationFromDeviceOrientation()
+        // Set orientation of device
+        let exifOrientation: CGImagePropertyOrientation
+        exifOrientation = .up
         let imageRequestHandler = VNImageRequestHandler(cvPixelBuffer: pixelBuffer, orientation: exifOrientation, options: [:])
         do {
             try imageRequestHandler.perform(self.requests)
