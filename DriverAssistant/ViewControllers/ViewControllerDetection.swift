@@ -117,10 +117,8 @@ class ViewControllerDetection: ViewController, ObservableObject {
             return
         }
         
-        // Set orientation of device
-        let exifOrientation: CGImagePropertyOrientation
-        exifOrientation = .up
-        let imageRequestHandler = VNImageRequestHandler(cvPixelBuffer: pixelBuffer, orientation: exifOrientation, options: [:])
+        // Set orientation of device to right so it matches with the iPhone's default landscape orientation
+        let imageRequestHandler = VNImageRequestHandler(cvPixelBuffer: pixelBuffer, orientation: .right, options: [:])
         do {
             try imageRequestHandler.perform(self.requests)
         } catch {

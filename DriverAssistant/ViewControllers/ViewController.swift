@@ -104,10 +104,7 @@ class ViewController: UIViewController, AVCaptureVideoDataOutputSampleBufferDele
             return
         }
         let captureConnection = videoDataOutput.connection(with: .video)
-        
-        // Rotate input image to portrait orientation
-        captureConnection?.videoOrientation = .portrait
-        
+                
         // Always process the frames
         captureConnection?.isEnabled = true
         do {
