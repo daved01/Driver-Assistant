@@ -31,11 +31,11 @@ The following are details regarding the implementation. The figure shows the dif
 
 
 ## Label data
-For the project we generated [COCO Traffic](link to coco traffic repo), a subset of the COCO dataset with the traffic lights relabelled with the indication states. The result is a dataset with 14 classes relevant to traffic scenes.
+For the project we generated [COCO Traffic](https://github.com/daved01/cocoTraffic), a subset of the COCO dataset with the traffic lights relabelled with the indication states. The result is a dataset with 14 classes relevant to traffic scenes.
 
 
 ## Developing the object detector
-We use a yolov5s model (link to the yolo repo) which we trained for 75 epochs on the data. We did not evaluate the model on an independent test set which is why we don’t quantify the performance here.
+We use a [yolov5s](https://github.com/ultralytics/yolov5) model which we trained for 75 epochs on the data. We did not evaluate the model on an independent test set which is why we don’t quantify the performance here.
 
 
 
@@ -79,4 +79,4 @@ And you can use the -h flag to get a list of the optional arguments for your exp
 ## Integrating the model into Swift
 Once the exported model has been added to the project, you have to call it with the `VNVisionRequest`.
 
-Apple provides an [example](https://developer.apple.com/documentation/vision/recognizing_objects_in_live_capture) for an object detection app. To use it with your own model, you might have to adjust the geometric transformation. For more details on these transformations see [here](link to upcoming post on the transformation).
+Apple provides an [example](https://developer.apple.com/documentation/vision/recognizing_objects_in_live_capture) for an object detection app. To use it with your own model, you might have to adjust the geometric transformation. For more details on these transformations see [here](https://www.neuralception.com/object-detection-app/).
