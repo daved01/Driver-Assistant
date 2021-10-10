@@ -1,10 +1,10 @@
 # Driver Assistant
 
-**Disclaimer:** *We made this app as a demonstration for how object detectors can be trained on a custom dataset in PyTorch and deployed in an iOS app. Do not rely on this app for safety in traffic and keep your eyes on the road at all times. Local restrictions on the usage of cell phones behind the wheel might exisit in your jurisdiction.*
+![GitHub repo file count](https://img.shields.io/github/directory-file-count/daved01/Driver-Assistant)
 
 A computer vision-based driver assistant which highlights important objects such as stop signs, traffic lights, and pedestrians. Traffic lights and stop signs are displayed as icons for better visibility next to the current speed.
 
-
+**Disclaimer:** *We made this app as a demonstration for how object detectors can be trained on a custom dataset in PyTorch and deployed in an iOS app. Do not rely on this app for safety in traffic and keep your eyes on the road at all times. Local restrictions on the usage of cell phones behind the wheel might exisit in your jurisdiction.*
 
 # Overview
 When launching the app, the vision model runs and the speed is calculated with GPS sensor data. You can tap the screen to show and hide the settings button at the bottom of the screen.
