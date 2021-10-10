@@ -1,5 +1,6 @@
 # Driver Assistant
-https://img.shields.io/github/license/daved01/Driver-Assistant?style=plastic
+
+![GitHub](https://img.shields.io/github/license/daved01/Driver-Assistant?style=plastic)
 
 A computer vision-based driver assistant which highlights important objects such as stop signs, traffic lights, and pedestrians. Traffic lights and stop signs are displayed as icons for better visibility next to the current speed.
 
