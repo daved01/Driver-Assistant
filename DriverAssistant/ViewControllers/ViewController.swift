@@ -48,7 +48,7 @@ class ViewController: UIViewController, AVCaptureVideoDataOutputSampleBufferDele
        
     
     fileprivate func setupConstraints() {
-        navigationView.view.backgroundColor = UIColor.clear // Needed to not hide other layers
+        navigationView.view.backgroundColor = UIColor.clear // Required to not hide other layers
         navigationView.view.translatesAutoresizingMaskIntoConstraints = false
         navigationView.view.topAnchor.constraint(equalTo: view.topAnchor).isActive = true
         navigationView.view.bottomAnchor.constraint(equalTo: view.bottomAnchor).isActive = true

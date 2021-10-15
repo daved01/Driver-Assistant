@@ -9,7 +9,8 @@ import UIKit
 import AVFoundation
 import Vision
 
-// Modifies the thresholds of the model
+
+// Used to modify the thresholds of the model
 class ThresholdProvider: MLFeatureProvider {
     open var values = [
         "iouThreshold": MLFeatureValue(double: UserDefaults.standard.double(forKey: "iouThreshold")),
@@ -34,8 +35,11 @@ class ViewControllerDetection: ViewController, ObservableObject {
     private var firstConfidence: Float = 0.0
     private var requests = [VNRequest]()
     
+    private var thresholdProvider = ThresholdProvider()
+    
     
     @discardableResult
+    
     func setupVision() -> NSError? {
         // Setup Vision parts
         let error: NSError! = nil
@@ -49,7 +53,10 @@ class ViewControllerDetection: ViewController, ObservableObject {
             let objectRecognition = VNCoreMLRequest(model: visionModel, completionHandler: { (request, error) in
                 DispatchQueue.main.async(execute: {
                     if let results = request.results {
-                        visionModel.featureProvider = ThresholdProvider() // Update thresholds
+                        // Update thresholds
+                        self.thresholdProvider.values = ["iouThreshold": MLFeatureValue(double: UserDefaults.standard.double(forKey: "iouThreshold")),
+                                                         "confidenceThreshold": MLFeatureValue(double: UserDefaults.standard.double(forKey: "confidenceThreshold"))]
+                        visionModel.featureProvider = self.thresholdProvider
                         self.drawVisionRequestResults(results)
                     }
                 })
