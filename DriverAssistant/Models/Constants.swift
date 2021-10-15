@@ -26,4 +26,7 @@ struct Constants {
         static let navigation = CGColor.init(red: 47.0/255.0, green: 46.0/255.0, blue: 42.0/255.0, alpha: 1.0)
     }
     
+    
+    static let urlObjectDetection: String = "https://www.neuralception.com/objectdetection"
+    
 }

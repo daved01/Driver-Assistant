@@ -36,7 +36,10 @@ class ViewController: UIViewController, AVCaptureVideoDataOutputSampleBufferDele
         UIApplication.shared.isIdleTimerDisabled = true // Prevent the device from going to sleep
         super.viewDidLoad()
         
-        setupAVCapture() // Preview stuff
+        // Launch camera only if device is connected to allow for tests without device
+        if (TARGET_IPHONE_SIMULATOR == 0) {
+                setupAVCapture() // Preview stuff
+        }
         
         trafficLightRed.superview?.bringSubviewToFront(trafficLightRed)
         trafficLightGreen.superview?.bringSubviewToFront(trafficLightGreen)
@@ -45,7 +48,7 @@ class ViewController: UIViewController, AVCaptureVideoDataOutputSampleBufferDele
        
     
     fileprivate func setupConstraints() {
-        navigationView.view.backgroundColor = UIColor.clear // Needed to not hide other layers
+        navigationView.view.backgroundColor = UIColor.clear // Required to not hide other layers
         navigationView.view.translatesAutoresizingMaskIntoConstraints = false
         navigationView.view.topAnchor.constraint(equalTo: view.topAnchor).isActive = true
         navigationView.view.bottomAnchor.constraint(equalTo: view.bottomAnchor).isActive = true
@@ -74,6 +77,7 @@ class ViewController: UIViewController, AVCaptureVideoDataOutputSampleBufferDele
         
         // Select a video device, make an input
         let videoDevice = AVCaptureDevice.DiscoverySession(deviceTypes: [.builtInWideAngleCamera], mediaType: .video, position: .back).devices.first // TODO: use back camera
+        
         do {
             deviceInput = try AVCaptureDeviceInput(device: videoDevice!)
         } catch {

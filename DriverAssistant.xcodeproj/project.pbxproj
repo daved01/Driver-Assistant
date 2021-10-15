@@ -14,6 +14,7 @@
 		63832B7D269A246C00590A9F /* DisplayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63832B7C269A246C00590A9F /* DisplayView.swift */; };
 		63832B7F269A249000590A9F /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63832B7E269A249000590A9F /* SettingsView.swift */; };
 		63832B84269A253800590A9F /* LocationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63832B83269A253800590A9F /* LocationViewController.swift */; };
+		63CB353727187C7C0076324B /* DriverAssistantTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63CB353627187C7C0076324B /* DriverAssistantTests.swift */; };
 		63CB3CDD26E79E770015FFBD /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63CB3CDC26E79E770015FFBD /* Constants.swift */; };
 		FAB417F62099308400494E9C /* ViewControllerDetection.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAB417F52099308400494E9C /* ViewControllerDetection.swift */; };
 		FAD5009F1ED668B60074D713 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAD5009E1ED668B60074D713 /* AppDelegate.swift */; };
@@ -23,6 +24,16 @@
 		FAD500A91ED668B60074D713 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FAD500A71ED668B60074D713 /* LaunchScreen.storyboard */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		63CB353827187C7C0076324B /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = FAD500931ED668B60074D713 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = FAD5009A1ED668B60074D713;
+			remoteInfo = DriverAssistant;
+		};
+/* End PBXContainerItemProxy section */
+
 /* Begin PBXFileReference section */
 		6301F9A526A039600001E40E /* WebViewContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebViewContainer.swift; sourceTree = "<group>"; };
 		6301F9A726A039F90001E40E /* WebView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebView.swift; sourceTree = "<group>"; };
@@ -31,6 +42,8 @@
 		63832B7C269A246C00590A9F /* DisplayView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DisplayView.swift; sourceTree = "<group>"; };
 		63832B7E269A249000590A9F /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 		63832B83269A253800590A9F /* LocationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationViewController.swift; sourceTree = "<group>"; };
+		63CB353427187C7C0076324B /* DriverAssistantTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DriverAssistantTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		63CB353627187C7C0076324B /* DriverAssistantTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DriverAssistantTests.swift; sourceTree = "<group>"; };
 		63CB3CDC26E79E770015FFBD /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		7984D3D3A63BDFC4A07FEF8F /* SampleCode.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; name = SampleCode.xcconfig; path = Configuration/SampleCode.xcconfig; sourceTree = "<group>"; };
 		FAB417F52099308400494E9C /* ViewControllerDetection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewControllerDetection.swift; sourceTree = "<group>"; };
@@ -44,6 +57,13 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		63CB353127187C7C0076324B /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		FAD500981ED668B60074D713 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -85,6 +105,14 @@
 			path = Views;
 			sourceTree = "<group>";
 		};
+		63CB353527187C7C0076324B /* DriverAssistantTests */ = {
+			isa = PBXGroup;
+			children = (
+				63CB353627187C7C0076324B /* DriverAssistantTests.swift */,
+			);
+			path = DriverAssistantTests;
+			sourceTree = "<group>";
+		};
 		FA86553BE8674B6BE41BAA64 /* Configuration */ = {
 			isa = PBXGroup;
 			children = (
@@ -97,6 +125,7 @@
 			isa = PBXGroup;
 			children = (
 				FAD5009D1ED668B60074D713 /* DriverAssistant */,
+				63CB353527187C7C0076324B /* DriverAssistantTests */,
 				FAD5009C1ED668B60074D713 /* Products */,
 				FA86553BE8674B6BE41BAA64 /* Configuration */,
 			);
@@ -106,6 +135,7 @@
 			isa = PBXGroup;
 			children = (
 				FAD5009B1ED668B60074D713 /* DriverAssistant.app */,
+				63CB353427187C7C0076324B /* DriverAssistantTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -128,6 +158,24 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		63CB353327187C7C0076324B /* DriverAssistantTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 63CB353A27187C7C0076324B /* Build configuration list for PBXNativeTarget "DriverAssistantTests" */;
+			buildPhases = (
+				63CB353027187C7C0076324B /* Sources */,
+				63CB353127187C7C0076324B /* Frameworks */,
+				63CB353227187C7C0076324B /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				63CB353927187C7C0076324B /* PBXTargetDependency */,
+			);
+			name = DriverAssistantTests;
+			productName = DriverAssistantTests;
+			productReference = 63CB353427187C7C0076324B /* DriverAssistantTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 		FAD5009A1ED668B60074D713 /* DriverAssistant */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = FAD500AD1ED668B60074D713 /* Build configuration list for PBXNativeTarget "DriverAssistant" */;
@@ -151,10 +199,16 @@
 		FAD500931ED668B60074D713 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastSwiftUpdateCheck = 0900;
+				DefaultBuildSystemTypeForWorkspace = Latest;
+				LastSwiftUpdateCheck = 1300;
 				LastUpgradeCheck = 1250;
 				ORGANIZATIONNAME = "";
 				TargetAttributes = {
+					63CB353327187C7C0076324B = {
+						CreatedOnToolsVersion = 13.0;
+						ProvisioningStyle = Automatic;
+						TestTargetID = FAD5009A1ED668B60074D713;
+					};
 					FAD5009A1ED668B60074D713 = {
 						CreatedOnToolsVersion = 9.0;
 						LastSwiftMigration = 1140;
@@ -176,11 +230,19 @@
 			projectRoot = "";
 			targets = (
 				FAD5009A1ED668B60074D713 /* DriverAssistant */,
+				63CB353327187C7C0076324B /* DriverAssistantTests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		63CB353227187C7C0076324B /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		FAD500991ED668B60074D713 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -194,6 +256,14 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		63CB353027187C7C0076324B /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				63CB353727187C7C0076324B /* DriverAssistantTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		FAD500971ED668B60074D713 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -213,6 +283,14 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		63CB353927187C7C0076324B /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = FAD5009A1ED668B60074D713 /* DriverAssistant */;
+			targetProxy = 63CB353827187C7C0076324B /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		FAD500A21ED668B60074D713 /* Main.storyboard */ = {
@@ -234,6 +312,53 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		63CB353B27187C7C0076324B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 8N9383UWC5;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MARKETING_VERSION = 1.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = dk.DriverAssistantTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/DriverAssistant.app/DriverAssistant";
+			};
+			name = Debug;
+		};
+		63CB353C27187C7C0076324B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 8N9383UWC5;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MARKETING_VERSION = 1.0;
+				MTL_FAST_MATH = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = dk.DriverAssistantTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/DriverAssistant.app/DriverAssistant";
+			};
+			name = Release;
+		};
 		FAD500AB1ED668B60074D713 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 7984D3D3A63BDFC4A07FEF8F /* SampleCode.xcconfig */;
@@ -394,6 +519,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		63CB353A27187C7C0076324B /* Build configuration list for PBXNativeTarget "DriverAssistantTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				63CB353B27187C7C0076324B /* Debug */,
+				63CB353C27187C7C0076324B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		FAD500961ED668B60074D713 /* Build configuration list for PBXProject "DriverAssistant" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
